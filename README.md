@@ -6,6 +6,8 @@ ShipItOut consist of React front-end and Django backend.
 
 It is a dashboard-like app that tracks shipping containers where the shipper, container, port authorities can update the container status as it moves.
 
+Link to frontend repo [here](https://github.com/CheoR/shipItOut-client).
+
 ## Motivation
 
 I come from the transportation/logistics/freight shipping industries and often times the tools we used to track maintenace/inventory/shipments were clunky and outdated.
