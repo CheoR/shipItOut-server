@@ -1,29 +1,261 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-# dependencies
-/node_modules
-/.pnp
-.pnp.js
+# Compiled source #
+###################
+*.com
+*.class
+*.dll
+*.exe
+*.o
 
-# testing
-/coverage
+# C extensions #
+################
+*.so
 
-# production
-/build
+# Packages #
+############
 
-# misc
+# it is better to unpack these files and commit the raw source
+# git has its own built in compression methods
+
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+*.egg
+*.egg-info
+dist
+build
+eggs
+parts
+bin
+var
+sdist
+develop-eggs
+.installed.cfg
+lib
+lib64
+
+# Logs and databases #
+######################
+*.log
+*.sql
+*.sqlite*
+pip-log.txt
+pip-delete-this-directory.txt
+
+# OS generated files #
+######################
 .DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Python generated files #
+##########################
+*.pyc
+*.pyo
+*.py[cod]
+
+# PyInstaller #
+###############
+
+#  Usually these files are written by a python script from a template
+#  before PyInstaller builds the exe, so as to inject date/other infos into it.
+*.manifest
+*.spec
+
+# PyBuilder #
+#############
+target/
+
+# Distribution / packaging #
+############################
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Django #
+##########
+*.log
+*.pot
+*.pyc
+__pycache__/
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+media
+
+# If your build process includes running collectstatic, then you probably do not need or want to include staticfiles/
+# in your Git repository. Update and uncomment the following line accordingly.
+# <django-project-name>/staticfiles/
+staticfiles/
+
+# Flask #
+#########
+instance/
+.webassets-cache
+
+# Scrapy #
+##########
+.scrapy
+
+# Enviroments #
+###############
+.env
 .env.local
 .env.development.local
 .env.test.local
 .env.production.local
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
 
+# pyenv #
+#########
+.python-version
+
+# Production #
+##############
+/build
+local.py
+
+# Unit Test and Coverage Reports #
+##################################
+.cache
+.coverage*
+.tox
+nosetests.xml
+htmlcov
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# Celery Beat Schedule File #
+#############################
+celerybeat-schedule
+
+# SageMath Parsed Files #
+#########################
+*.sage.py
+
+# Translations #
+################
+*.mo
+*.pot
+
+# Complexity #
+##############
+output/*.html
+output/*/index.html
+
+# Sphinx #
+##########
+# learn how to deploy correctly
+# docs/_build
+
+# Spyder Project Settings #
+###########################
+.spyderproject
+.spyproject
+
+# Rope Project Settings #
+#########################
+.ropeproject
+
+# mkdocs documentation #
+########################
+/site
+
+# Ipython Notebook #
+###################
+*.ipynb_checkpoints
+*.ipynb
+
+# Node Modules #
+################
+/node_modules
+
+# Webpack #
+###########
+package-lock.json
+webpack-stats.json
+
+# Sass #
+########
+.sass-cache/
+*.css.map
+*.sass.map
+*.scss.map
+
+# Other #
+#########
+# *~
+*.bak
+*.swp
+*.swf
+.pnp
+.pnp.js
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-.eslintcache
-database.json
-*.json
-*.sql
-*.csv
+# mypy #
+########
+.mypy_cache/
+
+# React #
+#########
+.DS_*
+*.log
+logs
+**/*.backup.*
+**/*.back.*
+
+node_modules
+bower_components
+
+*.sublime*
+
+psd
+thumb
+sketch
+
+# For this project #
+####################
+*.rst
+# *.jpg
+# *.png*
+*.gif
+*.xap
+# *.jpeg
+notes_*.rst
+.vscode/
+
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
