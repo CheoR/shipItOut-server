@@ -250,12 +250,14 @@ sketch
 # For this project #
 ####################
 *.rst
-# *.jpg
-# *.png*
+*.jpg
+*.png
 *.gif
 *.xap
-# *.jpeg
+*.jpeg
+*.pdf
 project_notes.md
 .vscode/
+!data/
 
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
