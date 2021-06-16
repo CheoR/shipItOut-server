@@ -65,7 +65,12 @@ To verify, reconnect with:
 
     $ mv shipItOutServer/settings/local.py.example shipItOutServer/settings/local.py
 
-8.  Type this exact thing into the terminal to run the migrations and seed the database: `./seed_data.sh` and run with
+8.  Run migrations and migrate for app
+
+    $ python3 manage.py makemigrations api
+    $ python3 manage.py migrate
+
+9.  Type this exact thing into the terminal to run the migrations and seed the database: `./seed_data.sh` and run with
 
         $ bash seed_data.sh
 
