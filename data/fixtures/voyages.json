@@ -1,0 +1,82 @@
+[
+{
+  "model": "app1.voyage",
+  "pk": 1,
+  "fields": {
+    "voyage": "ECWC6819",
+    "vessel": 4
+  }
+},
+{
+  "model": "app1.voyage",
+  "pk": 2,
+  "fields": {
+    "voyage": "ECWC1096",
+    "vessel": 17
+  }
+},
+{
+  "model": "app1.voyage",
+  "pk": 3,
+  "fields": {
+    "voyage": "WCWC6768",
+    "vessel": 9
+  }
+},
+{
+  "model": "app1.voyage",
+  "pk": 4,
+  "fields": {
+    "voyage": "WCWC0017",
+    "vessel": 3
+  }
+},
+{
+  "model": "app1.voyage",
+  "pk": 5,
+  "fields": {
+    "voyage": "WCWC1666",
+    "vessel": 14
+  }
+},
+{
+  "model": "app1.voyage",
+  "pk": 6,
+  "fields": {
+    "voyage": "WCEC7061",
+    "vessel": 10
+  }
+},
+{
+  "model": "app1.voyage",
+  "pk": 7,
+  "fields": {
+    "voyage": "WCWC2849",
+    "vessel": 1
+  }
+},
+{
+  "model": "app1.voyage",
+  "pk": 8,
+  "fields": {
+    "voyage": "WCWC9742",
+    "vessel": 9
+  }
+},
+{
+  "model": "app1.voyage",
+  "pk": 9,
+  "fields": {
+    "voyage": "WCEC3604",
+    "vessel": 5
+  }
+},
+{
+  "model": "app1.voyage",
+  "pk": 10,
+  "fields": {
+    "voyage": "WCEC8090",
+    "vessel": 14
+  }
+}
+]

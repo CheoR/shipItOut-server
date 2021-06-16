@@ -1,0 +1,72 @@
+[
+{
+  "model": "app1.container",
+  "pk": 1,
+  "fields": {
+    "container": "WUSA2162",
+    "equipment_size": "40ST",
+    "container_status": 4,
+    "is_damaged": true,
+    "is_need_inspection": true,
+    "is_overweight": false,
+    "is_in_use": true,
+    "notes": "Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem. Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci."
+  }
+},
+{
+  "model": "app1.container",
+  "pk": 2,
+  "fields": {
+    "container": "KFJL3381",
+    "equipment_size": "40OG",
+    "container_status": 3,
+    "is_damaged": true,
+    "is_need_inspection": false,
+    "is_overweight": true,
+    "is_in_use": false,
+    "notes": "Vestibulum quam sapien, varius ut, blandit non, interdum in, ante."
+  }
+},
+{
+  "model": "app1.container",
+  "pk": 3,
+  "fields": {
+    "container": "TOTX0380",
+    "equipment_size": "20ST",
+    "container_status": 3,
+    "is_damaged": true,
+    "is_need_inspection": false,
+    "is_overweight": true,
+    "is_in_use": true,
+    "notes": "Fusce consequat."
+  }
+},
+{
+  "model": "app1.container",
+  "pk": 4,
+  "fields": {
+    "container": "GNXI3314",
+    "equipment_size": "40ST",
+    "container_status": 2,
+    "is_damaged": true,
+    "is_need_inspection": true,
+    "is_overweight": false,
+    "is_in_use": false,
+    "notes": "Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus."
+  }
+},
+{
+  "model": "app1.container",
+  "pk": 5,
+  "fields": {
+    "container": "BZAJ1118",
+    "equipment_size": "40OG",
+    "container_status": 3,
+    "is_damaged": true,
+    "is_need_inspection": false,
+    "is_overweight": false,
+    "is_in_use": false,
+    "notes": "In congue. Etiam justo. Etiam pretium iaculis justo."
+  }
+}
+]

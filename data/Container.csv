@@ -1,0 +1,6 @@
+id,container,equipment_size,cntr_status_id,isDamaged,isNeedInspection,isOverweight,inUse,notes
+1,XVUA8798,40OG,4,true,false,false,true,"Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo."
+2,CXVC3633,20HC,4,false,false,false,true,Duis ac nibh.
+3,TPCF9119,20HC,1,false,true,false,true,Nulla tellus. In sagittis dui vel nisl.
+4,LUDH1995,20HC,5,false,false,false,true,"Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat."
+5,QGYL9759,40HC,1,false,true,false,false,"In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit."

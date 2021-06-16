@@ -1,0 +1,197 @@
+[
+{
+  "model": "app1.product",
+  "pk": 1,
+  "fields": {
+    "commodity": "Yogurt - Strawberry, 175 Gr",
+    "weight": 2813.0,
+    "is_fragile": false,
+    "is_haz": false,
+    "is_damaged": false,
+    "is_reefer": true,
+    "container": 2
+  }
+},
+{
+  "model": "app1.product",
+  "pk": 2,
+  "fields": {
+    "commodity": "Tea - Black Currant",
+    "weight": 1380.0,
+    "is_fragile": true,
+    "is_haz": false,
+    "is_damaged": true,
+    "is_reefer": false,
+    "container": 4
+  }
+},
+{
+  "model": "app1.product",
+  "pk": 3,
+  "fields": {
+    "commodity": "Ecolab - Balanced Fusion",
+    "weight": 2674.0,
+    "is_fragile": true,
+    "is_haz": false,
+    "is_damaged": false,
+    "is_reefer": true,
+    "container": 2
+  }
+},
+{
+  "model": "app1.product",
+  "pk": 4,
+  "fields": {
+    "commodity": "Oil - Shortening,liqud, Fry",
+    "weight": 470.0,
+    "is_fragile": true,
+    "is_haz": true,
+    "is_damaged": true,
+    "is_reefer": true,
+    "container": 1
+  }
+},
+{
+  "model": "app1.product",
+  "pk": 5,
+  "fields": {
+    "commodity": "Vodka - Hot, Lnferno",
+    "weight": 1967.0,
+    "is_fragile": true,
+    "is_haz": false,
+    "is_damaged": false,
+    "is_reefer": false,
+    "container": 5
+  }
+},
+{
+  "model": "app1.product",
+  "pk": 6,
+  "fields": {
+    "commodity": "Olives - Kalamata",
+    "weight": 1219.0,
+    "is_fragile": true,
+    "is_haz": true,
+    "is_damaged": true,
+    "is_reefer": false,
+    "container": 3
+  }
+},
+{
+  "model": "app1.product",
+  "pk": 7,
+  "fields": {
+    "commodity": "Wine - Casillero Del Diablo",
+    "weight": 1521.0,
+    "is_fragile": false,
+    "is_haz": false,
+    "is_damaged": true,
+    "is_reefer": true,
+    "container": 2
+  }
+},
+{
+  "model": "app1.product",
+  "pk": 8,
+  "fields": {
+    "commodity": "Salsify, Organic",
+    "weight": 1611.0,
+    "is_fragile": true,
+    "is_haz": false,
+    "is_damaged": false,
+    "is_reefer": true,
+    "container": 3
+  }
+},
+{
+  "model": "app1.product",
+  "pk": 9,
+  "fields": {
+    "commodity": "Black Currants",
+    "weight": 1492.0,
+    "is_fragile": false,
+    "is_haz": false,
+    "is_damaged": true,
+    "is_reefer": false,
+    "container": 3
+  }
+},
+{
+  "model": "app1.product",
+  "pk": 10,
+  "fields": {
+    "commodity": "Pork - Ground",
+    "weight": 1719.0,
+    "is_fragile": true,
+    "is_haz": false,
+    "is_damaged": true,
+    "is_reefer": true,
+    "container": 4
+  }
+},
+{
+  "model": "app1.product",
+  "pk": 11,
+  "fields": {
+    "commodity": "Icecream Bar - Del Monte",
+    "weight": 402.0,
+    "is_fragile": false,
+    "is_haz": true,
+    "is_damaged": true,
+    "is_reefer": false,
+    "container": 3
+  }
+},
+{
+  "model": "app1.product",
+  "pk": 12,
+  "fields": {
+    "commodity": "Salmon - Canned",
+    "weight": 2533.0,
+    "is_fragile": false,
+    "is_haz": false,
+    "is_damaged": false,
+    "is_reefer": false,
+    "container": 3
+  }
+},
+{
+  "model": "app1.product",
+  "pk": 13,
+  "fields": {
+    "commodity": "Ecolab - Orange Frc, Cleaner",
+    "weight": 1588.0,
+    "is_fragile": false,
+    "is_haz": true,
+    "is_damaged": false,
+    "is_reefer": true,
+    "container": 2
+  }
+},
+{
+  "model": "app1.product",
+  "pk": 14,
+  "fields": {
+    "commodity": "Pizza Pizza Dough",
+    "weight": 2531.0,
+    "is_fragile": true,
+    "is_haz": true,
+    "is_damaged": false,
+    "is_reefer": false,
+    "container": 3
+  }
+},
+{
+  "model": "app1.product",
+  "pk": 15,
+  "fields": {
+    "commodity": "Beef - Rib Roast, Cap On",
+    "weight": 525.0,
+    "is_fragile": false,
+    "is_haz": true,
+    "is_damaged": true,
+    "is_reefer": false,
+    "container": 2
+  }
+}
+]

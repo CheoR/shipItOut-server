@@ -1,0 +1,37 @@
+[
+{
+  "model": "app1.bkgstatus",
+  "pk": 1,
+  "fields": {
+    "status": "Compete"
+  }
+},
+{
+  "model": "app1.bkgstatus",
+  "pk": 2,
+  "fields": {
+    "status": "Closed"
+  }
+},
+{
+  "model": "app1.bkgstatus",
+  "pk": 3,
+  "fields": {
+    "status": "Compete"
+  }
+},
+{
+  "model": "app1.bkgstatus",
+  "pk": 4,
+  "fields": {
+    "status": "Pending"
+  }
+},
+{
+  "model": "app1.bkgstatus",
+  "pk": 5,
+  "fields": {
+    "status": "Closed"
+  }
+}
+]

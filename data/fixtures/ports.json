@@ -1,0 +1,182 @@
+[
+{
+  "model": "app1.port",
+  "pk": 1,
+  "fields": {
+    "name": "Charleston",
+    "location": "Charleston",
+    "code": "USCHS"
+  }
+},
+{
+  "model": "app1.port",
+  "pk": 2,
+  "fields": {
+    "name": "Savannah",
+    "location": "Savannah",
+    "code": "USSAV"
+  }
+},
+{
+  "model": "app1.port",
+  "pk": 3,
+  "fields": {
+    "name": "Nashville",
+    "location": "Nashville",
+    "code": "USNSH"
+  }
+},
+{
+  "model": "app1.port",
+  "pk": 4,
+  "fields": {
+    "name": "Brownsville",
+    "location": "Brownsville",
+    "code": "USBRV"
+  }
+},
+{
+  "model": "app1.port",
+  "pk": 5,
+  "fields": {
+    "name": "Philadelphia",
+    "location": "Philadelphia",
+    "code": "USPHL"
+  }
+},
+{
+  "model": "app1.port",
+  "pk": 6,
+  "fields": {
+    "name": "Stockton",
+    "location": "Stockton",
+    "code": "USSTK"
+  }
+},
+{
+  "model": "app1.port",
+  "pk": 7,
+  "fields": {
+    "name": "Jacksonville",
+    "location": "Jacksonville",
+    "code": "USJCK"
+  }
+},
+{
+  "model": "app1.port",
+  "pk": 8,
+  "fields": {
+    "name": "Galveston",
+    "location": "Galveston",
+    "code": "USGLV"
+  }
+},
+{
+  "model": "app1.port",
+  "pk": 9,
+  "fields": {
+    "name": "Greenville",
+    "location": "Greenville",
+    "code": "USGRN"
+  }
+},
+{
+  "model": "app1.port",
+  "pk": 10,
+  "fields": {
+    "name": "Miami",
+    "location": "Miami",
+    "code": "USMIA"
+  }
+},
+{
+  "model": "app1.port",
+  "pk": 11,
+  "fields": {
+    "name": "Seattle",
+    "location": "Seattle",
+    "code": "USSEA"
+  }
+},
+{
+  "model": "app1.port",
+  "pk": 12,
+  "fields": {
+    "name": "Oakland",
+    "location": "Oakland",
+    "code": "USOAK"
+  }
+},
+{
+  "model": "app1.port",
+  "pk": 13,
+  "fields": {
+    "name": "Port Arthur",
+    "location": "Port Arthur",
+    "code": "USPTA"
+  }
+},
+{
+  "model": "app1.port",
+  "pk": 14,
+  "fields": {
+    "name": "Mobile",
+    "location": "Mobile",
+    "code": "USMBL"
+  }
+},
+{
+  "model": "app1.port",
+  "pk": 15,
+  "fields": {
+    "name": "New Orleans",
+    "location": "New Orleans",
+    "code": "USNWO"
+  }
+},
+{
+  "model": "app1.port",
+  "pk": 16,
+  "fields": {
+    "name": "Baltimore",
+    "location": "Baltimore",
+    "code": "USBLT"
+  }
+},
+{
+  "model": "app1.port",
+  "pk": 17,
+  "fields": {
+    "name": "New York",
+    "location": "New York",
+    "code": "USNYC"
+  }
+},
+{
+  "model": "app1.port",
+  "pk": 18,
+  "fields": {
+    "name": "Los Angeles",
+    "location": "Los Angeles",
+    "code": "USCLA"
+  }
+},
+{
+  "model": "app1.port",
+  "pk": 19,
+  "fields": {
+    "name": "Long Beach",
+    "location": "Long Beach",
+    "code": "USCLB"
+  }
+},
+{
+  "model": "app1.port",
+  "pk": 20,
+  "fields": {
+    "name": "Houston",
+    "location": "Houston",
+    "code": "USHOU"
+  }
+}
+]

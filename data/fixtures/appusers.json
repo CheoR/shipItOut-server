@@ -1,0 +1,72 @@
+[
+{
+  "model": "app1.appuser",
+  "pk": 1,
+  "fields": {
+    "user": "1",
+    "company": "King, Reinger and Barrows",
+    "role": "warehouse",
+    "phone": "263-441-7456"
+  }
+},
+{
+  "model": "app1.appuser",
+  "pk": 2,
+  "fields": {
+    "user": "2",
+    "company": "Hoeger LLC",
+    "role": "shipper",
+    "phone": "380-588-2635"
+  }
+},
+{
+  "model": "app1.appuser",
+  "pk": 3,
+  "fields": {
+    "user": "3",
+    "company": "Rosenbaum Inc",
+    "role": "warehouse",
+    "phone": "732-718-4307"
+  }
+},
+{
+  "model": "app1.appuser",
+  "pk": 4,
+  "fields": {
+    "user": "4",
+    "company": "Stoltenberg Group",
+    "role": "dispatch",
+    "phone": "632-850-1043"
+  }
+},
+{
+  "model": "app1.appuser",
+  "pk": 5,
+  "fields": {
+    "user": "5",
+    "company": "Bernier-Dare",
+    "role": "dispatch",
+    "phone": "468-960-0566"
+  }
+},
+{
+  "model": "app1.appuser",
+  "pk": 6,
+  "fields": {
+    "user": "6",
+    "company": "Mante-Wilderman",
+    "role": "shipper",
+    "phone": "551-904-3463"
+  }
+},
+{
+  "model": "app1.appuser",
+  "pk": 7,
+  "fields": {
+    "user": "7",
+    "company": "Altenwerth, Lebsack and Thompson",
+    "role": "port",
+    "phone": "180-858-9911"
+  }
+}
+]
