@@ -61,7 +61,11 @@ To verify, reconnect with:
 
     $ psql --host=localhost --dbname={from your .env file} --username={from your .env file}
 
-6.  Type this exact thing into the terminal to run the migrations and seed the database: `./seed_data.sh` and run with
+7.  Before running server make sure to update `local.py` file in `settings` to fit your localhost.
+
+    $ mv shipItOutServer/settings/local.py.example shipItOutServer/settings/local.py
+
+8.  Type this exact thing into the terminal to run the migrations and seed the database: `./seed_data.sh` and run with
 
         $ bash seed_data.sh
 
