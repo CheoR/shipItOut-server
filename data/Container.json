@@ -1,0 +1,5 @@
+[{"id":1,"container":"WOYU7039","equipment_size":"20HC","cntr_status_id":1,"isDamaged":true,"isNeedInspection":true,"isOverweight":true,"inUse":false,"notes":"Donec vitae nisi. Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus."},
+{"id":2,"container":"HHVA9371","equipment_size":"40HC","cntr_status_id":4,"isDamaged":true,"isNeedInspection":true,"isOverweight":true,"inUse":false,"notes":"Nam nulla."},
+{"id":3,"container":"HCMA6243","equipment_size":"40ST","cntr_status_id":2,"isDamaged":false,"isNeedInspection":true,"isOverweight":true,"inUse":false,"notes":"Etiam vel augue."},
+{"id":4,"container":"SQOZ3616","equipment_size":"40ST","cntr_status_id":5,"isDamaged":false,"isNeedInspection":false,"isOverweight":true,"inUse":true,"notes":"Praesent lectus."},
+{"id":5,"container":"VZPR4465","equipment_size":"20HC","cntr_status_id":2,"isDamaged":false,"isNeedInspection":true,"isOverweight":true,"inUse":true,"notes":"Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede."}]

@@ -1,0 +1,21 @@
+id,name,location,port_code
+1,Charleston,Charleston,USCHS
+2,Savannah,Savannah,USSAV
+3,Nashville,Nashville,USNSH
+4,Brownsville,Brownsville,USBRV
+5,Philadelphia,Philadelphia,USPHL
+6,Stockton,Stockton,USSTK
+7,Jacksonville,Jacksonville,USJCK
+8,Galveston,Galveston,USGLV
+9,Greenville,Greenville,USGRN
+10,Miami,Miami,USMIA
+11,Seattle,Seattle,USSEA
+12,Oakland,Oakland,USOAK
+13,Port Arthur,Port Arthur,USPTA
+14,Mobile,Mobile,USMBL
+15,New Orleans,New Orleans,USNWO
+16,Baltimore,Baltimore,USBLT
+17,New York,New York,USNYC
+18,Los Angeles,Los Angeles,USCLA
+19,Long Beach,Long Beach,USCLB
+20,Houston,Houston,USHOU

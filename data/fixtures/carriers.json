@@ -1,0 +1,51 @@
+[
+{
+  "model": "api.carrier",
+  "pk": 1,
+  "fields": {
+    "name": "Hettinger and Sons"
+  }
+},
+{
+  "model": "api.carrier",
+  "pk": 2,
+  "fields": {
+    "name": "Olson, Kemmer and Wolff"
+  }
+},
+{
+  "model": "api.carrier",
+  "pk": 3,
+  "fields": {
+    "name": "Rice Inc"
+  }
+},
+{
+  "model": "api.carrier",
+  "pk": 4,
+  "fields": {
+    "name": "Kuvalis, Wilkinson and McClure"
+  }
+},
+{
+  "model": "api.carrier",
+  "pk": 5,
+  "fields": {
+    "name": "Ortiz, Muller and Berge"
+  }
+},
+{
+  "model": "api.carrier",
+  "pk": 6,
+  "fields": {
+    "name": "Adams-Armstrong"
+  }
+},
+{
+  "model": "api.carrier",
+  "pk": 7,
+  "fields": {
+    "name": "Pollich Group"
+  }
+}
+]

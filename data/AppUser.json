@@ -1,0 +1,7 @@
+[{"id":1,"user_id":1,"company":"Becker, Huels and Sawayn","role":"port","phone":"306-278-0170"},
+{"id":2,"user_id":2,"company":"Hegmann-Schneider","role":"dispatch","phone":"544-235-3335"},
+{"id":3,"user_id":3,"company":"Breitenberg-Treutel","role":"warehouse","phone":"116-385-2350"},
+{"id":4,"user_id":4,"company":"Schinner, Stokes and Nikolaus","role":"shipper","phone":"726-702-0127"},
+{"id":5,"user_id":5,"company":"Wilderman, Stokes and Ernser","role":"shipper","phone":"620-748-2872"},
+{"id":6,"user_id":6,"company":"Daniel LLC","role":"port","phone":"393-903-0760"},
+{"id":7,"user_id":7,"company":"Wolf, Keebler and Kozey","role":"shipper","phone":"321-281-7685"}]

@@ -1,0 +1,202 @@
+[
+{
+  "model": "api.vessel",
+  "pk": 1,
+  "fields": {
+    "name": "Canae Ipsum",
+    "longitude": 21.426297,
+    "latitude": 40.9905239,
+    "service": 2
+  }
+},
+{
+  "model": "api.vessel",
+  "pk": 2,
+  "fields": {
+    "name": "Podargus strigoides",
+    "longitude": 12.2028691,
+    "latitude": 57.6055534,
+    "service": 2
+  }
+},
+{
+  "model": "api.vessel",
+  "pk": 3,
+  "fields": {
+    "name": "Parus atricapillus",
+    "longitude": -59.6144819,
+    "latitude": 13.0968511,
+    "service": 3
+  }
+},
+{
+  "model": "api.vessel",
+  "pk": 4,
+  "fields": {
+    "name": "Tiliqua scincoides",
+    "longitude": 123.3427328,
+    "latitude": 41.6528112,
+    "service": 3
+  }
+},
+{
+  "model": "api.vessel",
+  "pk": 5,
+  "fields": {
+    "name": "Ceratotherium simum",
+    "longitude": 122.248779,
+    "latitude": 40.819371,
+    "service": 1
+  }
+},
+{
+  "model": "api.vessel",
+  "pk": 6,
+  "fields": {
+    "name": "Tragelaphus scriptus",
+    "longitude": 45.6198851,
+    "latitude": 43.1627276,
+    "service": 4
+  }
+},
+{
+  "model": "api.vessel",
+  "pk": 7,
+  "fields": {
+    "name": "Hystrix cristata",
+    "longitude": 114.0369075,
+    "latitude": -7.7076152,
+    "service": 4
+  }
+},
+{
+  "model": "api.vessel",
+  "pk": 8,
+  "fields": {
+    "name": "Cordylus giganteus",
+    "longitude": 100.1255164,
+    "latitude": 17.2702191,
+    "service": 3
+  }
+},
+{
+  "model": "api.vessel",
+  "pk": 9,
+  "fields": {
+    "name": "Merops nubicus",
+    "longitude": 2.8125,
+    "latitude": 0.0,
+    "service": 4
+  }
+},
+{
+  "model": "api.vessel",
+  "pk": 10,
+  "fields": {
+    "name": "Alopochen aegyptiacus",
+    "longitude": 126.0203934,
+    "latitude": 6.8954177,
+    "service": 4
+  }
+},
+{
+  "model": "api.vessel",
+  "pk": 11,
+  "fields": {
+    "name": "Porphyrio porphyrio",
+    "longitude": 20.7400297,
+    "latitude": 42.2098979,
+    "service": 1
+  }
+},
+{
+  "model": "api.vessel",
+  "pk": 12,
+  "fields": {
+    "name": "Chelodina longicollis",
+    "longitude": 113.1709572,
+    "latitude": -7.7454234,
+    "service": 1
+  }
+},
+{
+  "model": "api.vessel",
+  "pk": 13,
+  "fields": {
+    "name": "Laniarius ferrugineus",
+    "longitude": -58.8062726,
+    "latitude": -27.5093879,
+    "service": 5
+  }
+},
+{
+  "model": "api.vessel",
+  "pk": 14,
+  "fields": {
+    "name": "Pandon haliaetus",
+    "longitude": 100.2936683,
+    "latitude": 14.8126417,
+    "service": 3
+  }
+},
+{
+  "model": "api.vessel",
+  "pk": 15,
+  "fields": {
+    "name": "Turtur chalcospilos",
+    "longitude": 110.12549,
+    "latitude": 25.757,
+    "service": 5
+  }
+},
+{
+  "model": "api.vessel",
+  "pk": 16,
+  "fields": {
+    "name": "Bos frontalis",
+    "longitude": 9.9171742,
+    "latitude": 11.4818951,
+    "service": 1
+  }
+},
+{
+  "model": "api.vessel",
+  "pk": 17,
+  "fields": {
+    "name": "Alouatta seniculus",
+    "longitude": 113.8331,
+    "latitude": -6.9465,
+    "service": 5
+  }
+},
+{
+  "model": "api.vessel",
+  "pk": 18,
+  "fields": {
+    "name": "Mazama gouazoubira",
+    "longitude": 20.4232296,
+    "latitude": 41.5327252,
+    "service": 2
+  }
+},
+{
+  "model": "api.vessel",
+  "pk": 19,
+  "fields": {
+    "name": "Otaria flavescens",
+    "longitude": 121.4305273,
+    "latitude": 30.1444208,
+    "service": 2
+  }
+},
+{
+  "model": "api.vessel",
+  "pk": 20,
+  "fields": {
+    "name": "unavailable",
+    "longitude": 13.1536197,
+    "latitude": 55.376816,
+    "service": 4
+  }
+}
+]

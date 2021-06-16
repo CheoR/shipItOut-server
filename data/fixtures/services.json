@@ -1,0 +1,37 @@
+[
+{
+  "model": "api.service",
+  "pk": 1,
+  "fields": {
+    "name": "WC"
+  }
+},
+{
+  "model": "api.service",
+  "pk": 2,
+  "fields": {
+    "name": "EC"
+  }
+},
+{
+  "model": "api.service",
+  "pk": 3,
+  "fields": {
+    "name": "NE"
+  }
+},
+{
+  "model": "api.service",
+  "pk": 4,
+  "fields": {
+    "name": "SE"
+  }
+},
+{
+  "model": "api.service",
+  "pk": 5,
+  "fields": {
+    "name": "GU"
+  }
+}
+]

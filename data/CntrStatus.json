@@ -1,0 +1,5 @@
+[{"id":1,"status":"Warehouse"},
+{"id":2,"status":"Warehouse"},
+{"id":3,"status":"TransitRoad"},
+{"id":4,"status":"TransitSea"},
+{"id":5,"status":"Yard"}]
