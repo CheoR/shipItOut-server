@@ -1,6 +1,6 @@
 [
 {
-  "model": "app1.appuser",
+  "model": "api.appuser",
   "pk": 1,
   "fields": {
     "user": "1",
@@ -10,7 +10,7 @@
   }
 },
 {
-  "model": "app1.appuser",
+  "model": "api.appuser",
   "pk": 2,
   "fields": {
     "user": "2",
@@ -20,7 +20,7 @@
   }
 },
 {
-  "model": "app1.appuser",
+  "model": "api.appuser",
   "pk": 3,
   "fields": {
     "user": "3",
@@ -30,7 +30,7 @@
   }
 },
 {
-  "model": "app1.appuser",
+  "model": "api.appuser",
   "pk": 4,
   "fields": {
     "user": "4",
@@ -40,7 +40,7 @@
   }
 },
 {
-  "model": "app1.appuser",
+  "model": "api.appuser",
   "pk": 5,
   "fields": {
     "user": "5",
@@ -50,7 +50,7 @@
   }
 },
 {
-  "model": "app1.appuser",
+  "model": "api.appuser",
   "pk": 6,
   "fields": {
     "user": "6",
@@ -60,7 +60,7 @@
   }
 },
 {
-  "model": "app1.appuser",
+  "model": "api.appuser",
   "pk": 7,
   "fields": {
     "user": "7",

@@ -1,6 +1,6 @@
 [
 {
-  "model": "app1.port",
+  "model": "api.port",
   "pk": 1,
   "fields": {
     "name": "Charleston",
@@ -9,7 +9,7 @@
   }
 },
 {
-  "model": "app1.port",
+  "model": "api.port",
   "pk": 2,
   "fields": {
     "name": "Savannah",
@@ -18,7 +18,7 @@
   }
 },
 {
-  "model": "app1.port",
+  "model": "api.port",
   "pk": 3,
   "fields": {
     "name": "Nashville",
@@ -27,7 +27,7 @@
   }
 },
 {
-  "model": "app1.port",
+  "model": "api.port",
   "pk": 4,
   "fields": {
     "name": "Brownsville",
@@ -36,7 +36,7 @@
   }
 },
 {
-  "model": "app1.port",
+  "model": "api.port",
   "pk": 5,
   "fields": {
     "name": "Philadelphia",
@@ -45,7 +45,7 @@
   }
 },
 {
-  "model": "app1.port",
+  "model": "api.port",
   "pk": 6,
   "fields": {
     "name": "Stockton",
@@ -54,7 +54,7 @@
   }
 },
 {
-  "model": "app1.port",
+  "model": "api.port",
   "pk": 7,
   "fields": {
     "name": "Jacksonville",
@@ -63,7 +63,7 @@
   }
 },
 {
-  "model": "app1.port",
+  "model": "api.port",
   "pk": 8,
   "fields": {
     "name": "Galveston",
@@ -72,7 +72,7 @@
   }
 },
 {
-  "model": "app1.port",
+  "model": "api.port",
   "pk": 9,
   "fields": {
     "name": "Greenville",
@@ -81,7 +81,7 @@
   }
 },
 {
-  "model": "app1.port",
+  "model": "api.port",
   "pk": 10,
   "fields": {
     "name": "Miami",
@@ -90,7 +90,7 @@
   }
 },
 {
-  "model": "app1.port",
+  "model": "api.port",
   "pk": 11,
   "fields": {
     "name": "Seattle",
@@ -99,7 +99,7 @@
   }
 },
 {
-  "model": "app1.port",
+  "model": "api.port",
   "pk": 12,
   "fields": {
     "name": "Oakland",
@@ -108,7 +108,7 @@
   }
 },
 {
-  "model": "app1.port",
+  "model": "api.port",
   "pk": 13,
   "fields": {
     "name": "Port Arthur",
@@ -117,7 +117,7 @@
   }
 },
 {
-  "model": "app1.port",
+  "model": "api.port",
   "pk": 14,
   "fields": {
     "name": "Mobile",
@@ -126,7 +126,7 @@
   }
 },
 {
-  "model": "app1.port",
+  "model": "api.port",
   "pk": 15,
   "fields": {
     "name": "New Orleans",
@@ -135,7 +135,7 @@
   }
 },
 {
-  "model": "app1.port",
+  "model": "api.port",
   "pk": 16,
   "fields": {
     "name": "Baltimore",
@@ -144,7 +144,7 @@
   }
 },
 {
-  "model": "app1.port",
+  "model": "api.port",
   "pk": 17,
   "fields": {
     "name": "New York",
@@ -153,7 +153,7 @@
   }
 },
 {
-  "model": "app1.port",
+  "model": "api.port",
   "pk": 18,
   "fields": {
     "name": "Los Angeles",
@@ -162,7 +162,7 @@
   }
 },
 {
-  "model": "app1.port",
+  "model": "api.port",
   "pk": 19,
   "fields": {
     "name": "Long Beach",
@@ -171,7 +171,7 @@
   }
 },
 {
-  "model": "app1.port",
+  "model": "api.port",
   "pk": 20,
   "fields": {
     "name": "Houston",

@@ -1,34 +1,34 @@
 [
 {
-  "model": "app1.document",
+  "model": "api.document",
   "pk": 1,
   "fields": {
     "are_docs_ready": true
   }
 },
 {
-  "model": "app1.document",
+  "model": "api.document",
   "pk": 2,
   "fields": {
     "are_docs_ready": true
   }
 },
 {
-  "model": "app1.document",
+  "model": "api.document",
   "pk": 3,
   "fields": {
     "are_docs_ready": false
   }
 },
 {
-  "model": "app1.document",
+  "model": "api.document",
   "pk": 4,
   "fields": {
     "are_docs_ready": true
   }
 },
 {
-  "model": "app1.document",
+  "model": "api.document",
   "pk": 5,
   "fields": {
     "are_docs_ready": false

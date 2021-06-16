@@ -1,34 +1,34 @@
 [
 {
-  "model": "app1.cntrstatus",
+  "model": "api.cntrstatus",
   "pk": 1,
   "fields": {
     "status": "Port"
   }
 },
 {
-  "model": "app1.cntrstatus",
+  "model": "api.cntrstatus",
   "pk": 2,
   "fields": {
     "status": "Port"
   }
 },
 {
-  "model": "app1.cntrstatus",
+  "model": "api.cntrstatus",
   "pk": 3,
   "fields": {
     "status": "Yard"
   }
 },
 {
-  "model": "app1.cntrstatus",
+  "model": "api.cntrstatus",
   "pk": 4,
   "fields": {
     "status": "TransitRoad"
   }
 },
 {
-  "model": "app1.cntrstatus",
+  "model": "api.cntrstatus",
   "pk": 5,
   "fields": {
     "status": "Yard"

@@ -1,6 +1,6 @@
 [
 {
-  "model": "app1.product",
+  "model": "api.product",
   "pk": 1,
   "fields": {
     "commodity": "Yogurt - Strawberry, 175 Gr",
@@ -13,7 +13,7 @@
   }
 },
 {
-  "model": "app1.product",
+  "model": "api.product",
   "pk": 2,
   "fields": {
     "commodity": "Tea - Black Currant",
@@ -26,7 +26,7 @@
   }
 },
 {
-  "model": "app1.product",
+  "model": "api.product",
   "pk": 3,
   "fields": {
     "commodity": "Ecolab - Balanced Fusion",
@@ -39,7 +39,7 @@
   }
 },
 {
-  "model": "app1.product",
+  "model": "api.product",
   "pk": 4,
   "fields": {
     "commodity": "Oil - Shortening,liqud, Fry",
@@ -52,7 +52,7 @@
   }
 },
 {
-  "model": "app1.product",
+  "model": "api.product",
   "pk": 5,
   "fields": {
     "commodity": "Vodka - Hot, Lnferno",
@@ -65,7 +65,7 @@
   }
 },
 {
-  "model": "app1.product",
+  "model": "api.product",
   "pk": 6,
   "fields": {
     "commodity": "Olives - Kalamata",
@@ -78,7 +78,7 @@
   }
 },
 {
-  "model": "app1.product",
+  "model": "api.product",
   "pk": 7,
   "fields": {
     "commodity": "Wine - Casillero Del Diablo",
@@ -91,7 +91,7 @@
   }
 },
 {
-  "model": "app1.product",
+  "model": "api.product",
   "pk": 8,
   "fields": {
     "commodity": "Salsify, Organic",
@@ -104,7 +104,7 @@
   }
 },
 {
-  "model": "app1.product",
+  "model": "api.product",
   "pk": 9,
   "fields": {
     "commodity": "Black Currants",
@@ -117,7 +117,7 @@
   }
 },
 {
-  "model": "app1.product",
+  "model": "api.product",
   "pk": 10,
   "fields": {
     "commodity": "Pork - Ground",
@@ -130,7 +130,7 @@
   }
 },
 {
-  "model": "app1.product",
+  "model": "api.product",
   "pk": 11,
   "fields": {
     "commodity": "Icecream Bar - Del Monte",
@@ -143,7 +143,7 @@
   }
 },
 {
-  "model": "app1.product",
+  "model": "api.product",
   "pk": 12,
   "fields": {
     "commodity": "Salmon - Canned",
@@ -156,7 +156,7 @@
   }
 },
 {
-  "model": "app1.product",
+  "model": "api.product",
   "pk": 13,
   "fields": {
     "commodity": "Ecolab - Orange Frc, Cleaner",
@@ -169,7 +169,7 @@
   }
 },
 {
-  "model": "app1.product",
+  "model": "api.product",
   "pk": 14,
   "fields": {
     "commodity": "Pizza Pizza Dough",
@@ -182,7 +182,7 @@
   }
 },
 {
-  "model": "app1.product",
+  "model": "api.product",
   "pk": 15,
   "fields": {
     "commodity": "Beef - Rib Roast, Cap On",

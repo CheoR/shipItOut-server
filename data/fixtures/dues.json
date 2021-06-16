@@ -1,34 +1,34 @@
 [
 {
-  "model": "app1.due",
+  "model": "api.due",
   "pk": 1,
   "fields": {
     "are_dues_paid": false
   }
 },
 {
-  "model": "app1.due",
+  "model": "api.due",
   "pk": 2,
   "fields": {
     "are_dues_paid": false
   }
 },
 {
-  "model": "app1.due",
+  "model": "api.due",
   "pk": 3,
   "fields": {
     "are_dues_paid": true
   }
 },
 {
-  "model": "app1.due",
+  "model": "api.due",
   "pk": 4,
   "fields": {
     "are_dues_paid": true
   }
 },
 {
-  "model": "app1.due",
+  "model": "api.due",
   "pk": 5,
   "fields": {
     "are_dues_paid": true

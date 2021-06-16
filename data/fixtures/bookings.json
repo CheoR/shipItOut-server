@@ -1,6 +1,6 @@
 [
 {
-  "model": "app1.booking",
+  "model": "api.booking",
   "pk": 1,
   "fields": {
     "user": 5,
@@ -21,7 +21,7 @@
   }
 },
 {
-  "model": "app1.booking",
+  "model": "api.booking",
   "pk": 2,
   "fields": {
     "user": 2,
@@ -42,7 +42,7 @@
   }
 },
 {
-  "model": "app1.booking",
+  "model": "api.booking",
   "pk": 3,
   "fields": {
     "user": 4,
@@ -63,7 +63,7 @@
   }
 },
 {
-  "model": "app1.booking",
+  "model": "api.booking",
   "pk": 4,
   "fields": {
     "user": 5,
@@ -84,7 +84,7 @@
   }
 },
 {
-  "model": "app1.booking",
+  "model": "api.booking",
   "pk": 5,
   "fields": {
     "user": 7,
@@ -105,7 +105,7 @@
   }
 },
 {
-  "model": "app1.booking",
+  "model": "api.booking",
   "pk": 6,
   "fields": {
     "user": 5,
@@ -126,7 +126,7 @@
   }
 },
 {
-  "model": "app1.booking",
+  "model": "api.booking",
   "pk": 7,
   "fields": {
     "user": 7,
@@ -147,7 +147,7 @@
   }
 },
 {
-  "model": "app1.booking",
+  "model": "api.booking",
   "pk": 8,
   "fields": {
     "user": 3,
@@ -168,7 +168,7 @@
   }
 },
 {
-  "model": "app1.booking",
+  "model": "api.booking",
   "pk": 9,
   "fields": {
     "user": 4,
@@ -189,7 +189,7 @@
   }
 },
 {
-  "model": "app1.booking",
+  "model": "api.booking",
   "pk": 10,
   "fields": {
     "user": 4,
@@ -210,7 +210,7 @@
   }
 },
 {
-  "model": "app1.booking",
+  "model": "api.booking",
   "pk": 11,
   "fields": {
     "user": 7,
@@ -231,7 +231,7 @@
   }
 },
 {
-  "model": "app1.booking",
+  "model": "api.booking",
   "pk": 12,
   "fields": {
     "user": 4,
@@ -252,7 +252,7 @@
   }
 },
 {
-  "model": "app1.booking",
+  "model": "api.booking",
   "pk": 13,
   "fields": {
     "user": 7,
@@ -273,7 +273,7 @@
   }
 },
 {
-  "model": "app1.booking",
+  "model": "api.booking",
   "pk": 14,
   "fields": {
     "user": 7,
@@ -294,7 +294,7 @@
   }
 },
 {
-  "model": "app1.booking",
+  "model": "api.booking",
   "pk": 15,
   "fields": {
     "user": 2,
@@ -315,7 +315,7 @@
   }
 },
 {
-  "model": "app1.booking",
+  "model": "api.booking",
   "pk": 16,
   "fields": {
     "user": 3,
@@ -336,7 +336,7 @@
   }
 },
 {
-  "model": "app1.booking",
+  "model": "api.booking",
   "pk": 17,
   "fields": {
     "user": 2,
@@ -357,7 +357,7 @@
   }
 },
 {
-  "model": "app1.booking",
+  "model": "api.booking",
   "pk": 18,
   "fields": {
     "user": 3,
@@ -378,7 +378,7 @@
   }
 },
 {
-  "model": "app1.booking",
+  "model": "api.booking",
   "pk": 19,
   "fields": {
     "user": 4,
@@ -399,7 +399,7 @@
   }
 },
 {
-  "model": "app1.booking",
+  "model": "api.booking",
   "pk": 20,
   "fields": {
     "user": 6,

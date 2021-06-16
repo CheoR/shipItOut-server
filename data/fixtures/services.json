@@ -1,34 +1,34 @@
 [
 {
-  "model": "app1.service",
+  "model": "api.service",
   "pk": 1,
   "fields": {
     "name": "WC"
   }
 },
 {
-  "model": "app1.service",
+  "model": "api.service",
   "pk": 2,
   "fields": {
     "name": "EC"
   }
 },
 {
-  "model": "app1.service",
+  "model": "api.service",
   "pk": 3,
   "fields": {
     "name": "NE"
   }
 },
 {
-  "model": "app1.service",
+  "model": "api.service",
   "pk": 4,
   "fields": {
     "name": "SE"
   }
 },
 {
-  "model": "app1.service",
+  "model": "api.service",
   "pk": 5,
   "fields": {
     "name": "GU"

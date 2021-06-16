@@ -28,7 +28,7 @@
 # python manage.py loaddata product_category
 
 
-appName="app1"
+appName="api"
 pathToFixtures="data/fixtures"
 
 declare -a tablesToDropArray=($appName authtoken auth)

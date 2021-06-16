@@ -1,6 +1,6 @@
 [
 {
-  "model": "app1.container",
+  "model": "api.container",
   "pk": 1,
   "fields": {
     "container": "WUSA2162",
@@ -14,7 +14,7 @@
   }
 },
 {
-  "model": "app1.container",
+  "model": "api.container",
   "pk": 2,
   "fields": {
     "container": "KFJL3381",
@@ -28,7 +28,7 @@
   }
 },
 {
-  "model": "app1.container",
+  "model": "api.container",
   "pk": 3,
   "fields": {
     "container": "TOTX0380",
@@ -42,7 +42,7 @@
   }
 },
 {
-  "model": "app1.container",
+  "model": "api.container",
   "pk": 4,
   "fields": {
     "container": "GNXI3314",
@@ -56,7 +56,7 @@
   }
 },
 {
-  "model": "app1.container",
+  "model": "api.container",
   "pk": 5,
   "fields": {
     "container": "BZAJ1118",

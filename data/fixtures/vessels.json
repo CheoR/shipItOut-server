@@ -1,6 +1,6 @@
 [
 {
-  "model": "app1.vessel",
+  "model": "api.vessel",
   "pk": 1,
   "fields": {
     "name": "Canae Ipsum",
@@ -10,7 +10,7 @@
   }
 },
 {
-  "model": "app1.vessel",
+  "model": "api.vessel",
   "pk": 2,
   "fields": {
     "name": "Podargus strigoides",
@@ -20,7 +20,7 @@
   }
 },
 {
-  "model": "app1.vessel",
+  "model": "api.vessel",
   "pk": 3,
   "fields": {
     "name": "Parus atricapillus",
@@ -30,7 +30,7 @@
   }
 },
 {
-  "model": "app1.vessel",
+  "model": "api.vessel",
   "pk": 4,
   "fields": {
     "name": "Tiliqua scincoides",
@@ -40,7 +40,7 @@
   }
 },
 {
-  "model": "app1.vessel",
+  "model": "api.vessel",
   "pk": 5,
   "fields": {
     "name": "Ceratotherium simum",
@@ -50,7 +50,7 @@
   }
 },
 {
-  "model": "app1.vessel",
+  "model": "api.vessel",
   "pk": 6,
   "fields": {
     "name": "Tragelaphus scriptus",
@@ -60,7 +60,7 @@
   }
 },
 {
-  "model": "app1.vessel",
+  "model": "api.vessel",
   "pk": 7,
   "fields": {
     "name": "Hystrix cristata",
@@ -70,7 +70,7 @@
   }
 },
 {
-  "model": "app1.vessel",
+  "model": "api.vessel",
   "pk": 8,
   "fields": {
     "name": "Cordylus giganteus",
@@ -80,7 +80,7 @@
   }
 },
 {
-  "model": "app1.vessel",
+  "model": "api.vessel",
   "pk": 9,
   "fields": {
     "name": "Merops nubicus",
@@ -90,7 +90,7 @@
   }
 },
 {
-  "model": "app1.vessel",
+  "model": "api.vessel",
   "pk": 10,
   "fields": {
     "name": "Alopochen aegyptiacus",
@@ -100,7 +100,7 @@
   }
 },
 {
-  "model": "app1.vessel",
+  "model": "api.vessel",
   "pk": 11,
   "fields": {
     "name": "Porphyrio porphyrio",
@@ -110,7 +110,7 @@
   }
 },
 {
-  "model": "app1.vessel",
+  "model": "api.vessel",
   "pk": 12,
   "fields": {
     "name": "Chelodina longicollis",
@@ -120,7 +120,7 @@
   }
 },
 {
-  "model": "app1.vessel",
+  "model": "api.vessel",
   "pk": 13,
   "fields": {
     "name": "Laniarius ferrugineus",
@@ -130,7 +130,7 @@
   }
 },
 {
-  "model": "app1.vessel",
+  "model": "api.vessel",
   "pk": 14,
   "fields": {
     "name": "Pandon haliaetus",
@@ -140,7 +140,7 @@
   }
 },
 {
-  "model": "app1.vessel",
+  "model": "api.vessel",
   "pk": 15,
   "fields": {
     "name": "Turtur chalcospilos",
@@ -150,7 +150,7 @@
   }
 },
 {
-  "model": "app1.vessel",
+  "model": "api.vessel",
   "pk": 16,
   "fields": {
     "name": "Bos frontalis",
@@ -160,7 +160,7 @@
   }
 },
 {
-  "model": "app1.vessel",
+  "model": "api.vessel",
   "pk": 17,
   "fields": {
     "name": "Alouatta seniculus",
@@ -170,7 +170,7 @@
   }
 },
 {
-  "model": "app1.vessel",
+  "model": "api.vessel",
   "pk": 18,
   "fields": {
     "name": "Mazama gouazoubira",
@@ -180,7 +180,7 @@
   }
 },
 {
-  "model": "app1.vessel",
+  "model": "api.vessel",
   "pk": 19,
   "fields": {
     "name": "Otaria flavescens",
@@ -190,7 +190,7 @@
   }
 },
 {
-  "model": "app1.vessel",
+  "model": "api.vessel",
   "pk": 20,
   "fields": {
     "name": "unavailable",
