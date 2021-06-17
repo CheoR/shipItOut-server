@@ -2,6 +2,8 @@
 
 # Project
 
+[![Build Status](https://travis-ci.com/CheoR/shipItOut-server.svg?branch=main)](https://travis-ci.com/CheoR/shipItOut-server)
+
 Current live site can be found at [ShipItOut](https://shipitout-api.herokuapp.com/)
 
 ShipItOut is my full stack NSS C46 capstone project. It is related to my initial project, [PackItUp](https://github.com/CheoR/pack-it-up) - track what you pack, app.
