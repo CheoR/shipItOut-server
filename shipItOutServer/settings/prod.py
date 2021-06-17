@@ -2,8 +2,8 @@ from .base import *
 
 DEBUG = False
 # update deploy-this-test to your app name
-ALLOWED_HOSTS = ['deploy-this-test.herokuapp.com']
+ALLOWED_HOSTS = ['shipitout-api.herokuapp.com']
 
 CORS_ORIGIN_WHITELIST = (
-    'https://deploy-this-test.herokuapp.com',
+    'https://shipitout-api.herokuapp.com',
 )
