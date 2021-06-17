@@ -12,7 +12,7 @@ services:
   - postgresql
 before_script:
   # - cp .env.example .env
-  - psql -c "CREATE DATABASE travis_test_db;" -U postgres
+  - psql -c "CREATE DATABASE shipitout_db;" -U postgres
   - psql -c "CREATE USER foo WITH PASSWORD 'bar';" -U postgres
   - python manage.py makemigrations
   - python manage.py migrate
