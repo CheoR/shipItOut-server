@@ -1,0 +1,15 @@
+language: python
+python:
+  - "3.6"      # current default Python on Travis CI
+  - "3.7"
+  - "3.8"
+# command to install dependencies
+install:
+  - pip install -r requirements.txt
+before_script:
+ # - cp .env.example .env
+ - python manage.py migrate
+# command to run tests
+# script:
+#   - pytest
+#   - python manage.py test --settings=parsifal.test_settings

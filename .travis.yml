@@ -1,0 +1,21 @@
+language: python
+python:
+  - "3.6" # current default Python on Travis CI
+  - "3.7"
+  - "3.8"
+os: linux
+dist: xenial
+# command to install dependencies
+install:
+  - pipenv install
+services:
+  - postgresql
+before_script:
+  # - cp .env.example .env
+  - psql -c "CREATE DATABASE travis_test_db;" -U postgres
+  - psql -c "CREATE USER foo WITH PASSWORD 'bar';" -U postgres
+  - python manage.py makemigrations
+  - python manage.py migrate
+script:
+  - python manage.py test
+  # - python manage.py test tests.db_test
