@@ -36,10 +36,10 @@ from api.views import login_user, register_user
 router = routers.DefaultRouter(trailing_slash=False)
 
 urlpatterns = [
+    path('', include('api.urls', namespace='api')),
     path('', include(router.urls)),
     path('register', register_user),
     path('login', login_user),
     path('api-auth', include('rest_framework.urls', namespace='rest_framework')),
     path('ship_admin/', admin.site.urls),
-    path('', include('api.urls', namespace='api'))
 ]
