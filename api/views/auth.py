@@ -44,7 +44,7 @@ def login_user(request):
     else:
         # Bad login credentials.
         data = json.dumps({"valid": False})
-        return HttpResponse(data, content_type='application/json')
+        return HttpResponse(data, content_type='application/json', status=status.HTTP_401_UNAUTHORIZED)
 
 
 @csrf_exempt
