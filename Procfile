@@ -1,1 +1,1 @@
-web: gunicorn shipItOutServer.wsgi
+web: gunicorn shipItOutServer.wsgi --log-file -

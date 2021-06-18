@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 import django_heroku
+import os
 
 from pathlib import Path
 from decouple import config
@@ -157,6 +158,7 @@ MEDIA_URL = '/media/'
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 
 # Default primary key field type
@@ -167,3 +169,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # For deploying on Heroku
 django_heroku.settings(locals())
+# django_on_heroku.settings(locals())
