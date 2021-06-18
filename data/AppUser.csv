@@ -1,8 +1,11 @@
 id,user_id,company,role,phone
-1,1,Veum and Sons,shipper,759-982-7353
-2,2,Heidenreich-Brakus,shipper,388-603-9351
-3,3,Bergstrom-Nikolaus,warehouse,325-174-7144
-4,4,"Zulauf, Von and Kassulke",shipper,383-597-1228
-5,5,"Feest, Marquardt and Sawayn",warehouse,598-711-9844
-6,6,"Nolan, Mills and Ward",port,925-436-0435
-7,7,Klein-Dickinson,shipper,547-630-2941
+1,1,Kris-Feest,dispatch,516-342-6256
+2,2,Harber-Raynor,dispatch,608-257-8494
+3,3,Harris-Bartell,dispatch,613-488-7332
+4,4,Hoeger Group,shipper,709-794-0006
+5,5,Tremblay Group,dispatch,128-782-7189
+6,6,Hand-Harber,port,596-911-3674
+7,7,"Schoen, Rogahn and Walker",shipper,324-699-7830
+8,8,"Purdy, Ortiz and Orn",dispatch,377-765-5591
+9,9,Corwin Inc,port,739-349-2637
+10,10,"DuBuque, Quitzon and Stroman",port,954-398-0557

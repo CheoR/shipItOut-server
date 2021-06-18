@@ -3,70 +3,100 @@
   "model": "api.appuser",
   "pk": 1,
   "fields": {
-    "user": "1",
-    "company": "King, Reinger and Barrows",
-    "role": "warehouse",
-    "phone": "263-441-7456"
+    "user": 1,
+    "company": "Nitzsche, Howe and Hartmann",
+    "role": "dispatch",
+    "phone": "957-512-8694"
   }
 },
 {
   "model": "api.appuser",
   "pk": 2,
   "fields": {
-    "user": "2",
-    "company": "Hoeger LLC",
-    "role": "shipper",
-    "phone": "380-588-2635"
+    "user": 2,
+    "company": "Schuster, Hammes and Tillman",
+    "role": "warehouse",
+    "phone": "751-299-1733"
   }
 },
 {
   "model": "api.appuser",
   "pk": 3,
   "fields": {
-    "user": "3",
-    "company": "Rosenbaum Inc",
-    "role": "warehouse",
-    "phone": "732-718-4307"
+    "user": 3,
+    "company": "Stiedemann-McGlynn",
+    "role": "port",
+    "phone": "964-714-7986"
   }
 },
 {
   "model": "api.appuser",
   "pk": 4,
   "fields": {
-    "user": "4",
-    "company": "Stoltenberg Group",
-    "role": "dispatch",
-    "phone": "632-850-1043"
+    "user": 4,
+    "company": "Reichel LLC",
+    "role": "warehouse",
+    "phone": "427-650-2809"
   }
 },
 {
   "model": "api.appuser",
   "pk": 5,
   "fields": {
-    "user": "5",
-    "company": "Bernier-Dare",
+    "user": 5,
+    "company": "Mosciski-Hoeger",
     "role": "dispatch",
-    "phone": "468-960-0566"
+    "phone": "749-395-7899"
   }
 },
 {
   "model": "api.appuser",
   "pk": 6,
   "fields": {
-    "user": "6",
-    "company": "Mante-Wilderman",
-    "role": "shipper",
-    "phone": "551-904-3463"
+    "user": 6,
+    "company": "Yundt, Bayer and Metz",
+    "role": "dispatch",
+    "phone": "101-566-4167"
   }
 },
 {
   "model": "api.appuser",
   "pk": 7,
   "fields": {
-    "user": "7",
-    "company": "Altenwerth, Lebsack and Thompson",
+    "user": 7,
+    "company": "Roob-Becker",
     "role": "port",
-    "phone": "180-858-9911"
+    "phone": "955-746-0699"
+  }
+},
+{
+  "model": "api.appuser",
+  "pk": 8,
+  "fields": {
+    "user": 8,
+    "company": "Miller-Christiansen",
+    "role": "warehouse",
+    "phone": "852-322-0268"
+  }
+},
+{
+  "model": "api.appuser",
+  "pk": 9,
+  "fields": {
+    "user": 9,
+    "company": "Wunsch, Stiedemann and Sipes",
+    "role": "port",
+    "phone": "882-178-4026"
+  }
+},
+{
+  "model": "api.appuser",
+  "pk": 10,
+  "fields": {
+    "user": 10,
+    "company": "Murphy, Reinger and Hayes",
+    "role": "port",
+    "phone": "202-553-3178"
   }
 }
 ]
