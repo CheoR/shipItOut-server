@@ -19,6 +19,20 @@ from django.urls import path, include
 from rest_framework import routers
 
 from api.views import login_user, register_user
+from api.views import AppUserViewSet
+from api.views import ServiceViewSet
+from api.views import VesselViewSet
+from api.views import VoyageViewSet
+from api.views import CarrierViewSet
+from api.views import PortViewSet
+from api.views import DocumentViewSet
+from api.views import DueViewSet
+from api.views import BkgStatusViewSet
+from api.views import CntrStatusViewSet
+from api.views import ContainerViewSet
+from api.views import ProductViewSet
+from api.views import BookingViewSet
+
 
 # At any point, your urlpatterns can “include” other URLconf modules.
 #  This essentially “roots” a set of URLs below other ones.
@@ -34,6 +48,20 @@ from api.views import login_user, register_user
 
 # may no longer need trailing_slash
 router = routers.DefaultRouter(trailing_slash=False)
+
+router.register(r'bookings', BookingViewSet, 'booking')
+router.register(r'appUsers', AppUserViewSet, 'appUser')
+router.register(r'services', ServiceViewSet, 'service')
+router.register(r'vessels', VesselViewSet, 'vessel')
+router.register(r'voyages', VoyageViewSet, 'voyage')
+router.register(r'carriers', CarrierViewSet, 'carrier')
+router.register(r'ports', PortViewSet, 'port')
+router.register(r'documents', DocumentViewSet, 'document')
+router.register(r'dues', DueViewSet, 'due')
+router.register(r'bkgStatuses', BkgStatusViewSet, 'bkgStatus')
+router.register(r'cntrStatuses', CntrStatusViewSet, 'cntrStatus')
+router.register(r'containers', ContainerViewSet, 'container')
+router.register(r'products', ProductViewSet, 'product')
 
 urlpatterns = [
     path('', include('api.urls', namespace='api')),
