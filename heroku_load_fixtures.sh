@@ -34,7 +34,7 @@ for fixture in ${fixturesArray[@]}; do
    echo -e "\n*************"
    echo "Loading $fixture"
    echo "*************"
-   python manage.py loaddata $pathToFixtures/$fixture
+   python3 manage.py loaddata $pathToFixtures/$fixture
 done
 
 echo -e '\n================'
