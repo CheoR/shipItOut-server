@@ -10,7 +10,5 @@ class BookingSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Booking
-        fields = ('id', 'user', 'booking', 'voyage_reference', 'container',
-                  'loading_origin', 'unloading_destination', 'pickup_appt',
-                  'port', 'port_cutoff', 'rail_cutoff', 'document', 'due',
-                  'has_issue', 'booking_status', 'notes')
+        fields = ('id', 'booking_status', 'voyage_reference', 'booking', 'container',
+                  'loading_origin', 'unloading_destination', 'pickup_appt', 'port', 'port_cutoff', 'rail_cutoff', 'document', 'due', 'has_issue', 'notes')
