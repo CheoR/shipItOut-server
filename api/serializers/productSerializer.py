@@ -24,7 +24,7 @@ class ProductSerializer(serializers.ModelSerializer):
         cs_representation = representation.pop('container')
         for key in cs_representation:
             if key == 'id':
-                continue
+                pass
             representation[key] = cs_representation[key]
 
         return representation
