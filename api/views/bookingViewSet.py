@@ -44,6 +44,7 @@ class BookingViewSet(ViewSet):
             obj_list = []
             for _ in products:
                 obj = {}
+                obj['product_id'] = _.id
                 obj['commodity'] = _.commodity
                 obj['weight'] = _.weight
                 obj['product_fragile'] = _.is_fragile
@@ -65,7 +66,7 @@ class BookingViewSet(ViewSet):
             # )
 
             bkg_list = []
-            for bkg in bookings:
+            for idxb, bkg in enumerate(bookings):
 
                 booking = Booking.objects.get(user=user, pk=bkg.id)
                 carrier = Carrier.objects.get(id=booking.carrier.id)
@@ -106,6 +107,7 @@ class BookingViewSet(ViewSet):
                 data['container_status'] = cntr_status.status
                 data['container'] = container.container
                 data['size'] = container.equipment_size
+                data['id_container'] = container.id
                 data['container_damaged'] = container.is_damaged
                 data['overweight'] = container.is_overweight
                 data['needs_inspection'] = container.is_need_inspection
@@ -121,6 +123,17 @@ class BookingViewSet(ViewSet):
                 data['booking_notes'] = booking.notes
                 data['container_notes'] = container.notes
                 data['products'] = products
+                if len(products):
+                    for idxp, value in enumerate(products):
+                        key = F"product_{idxb+1}_{idxp+1}_"
+
+                        data[key+"product_id"] = value["product_id"]
+                        data[key+"commodity"] = value["commodity"]
+                        data[key+"weight"] = value["weight"]
+                        data[key+"product_fragile"] = value["product_fragile"]
+                        data[key+"product_haz"] = value["product_haz"]
+                        data[key+"product_damaged"] = value["product_damaged"]
+                        data[key+"reefer"] = value["reefer"]
 
                 bkg_list.append(data)
 
@@ -140,6 +153,7 @@ class BookingViewSet(ViewSet):
             obj_list = []
             for _ in products:
                 obj = {}
+                obj['product_id'] = _.id
                 obj['commodity'] = _.commodity
                 obj['weight'] = _.weight
                 obj['product_fragile'] = _.is_fragile
@@ -151,6 +165,7 @@ class BookingViewSet(ViewSet):
             return obj_list
 
         user = AppUser.objects.get(user=request.auth.user)
+        print("getting single")
 
         try:
             booking = Booking.objects.get(user=user, pk=pk)
@@ -188,6 +203,7 @@ class BookingViewSet(ViewSet):
             data['container'] = container.container
             data['container_status'] = cntr_status.status
             data['size'] = container.equipment_size
+            data['id_container'] = container.id
             data['container_damaged'] = container.is_damaged
             data['needs_inspection'] = container.is_need_inspection
             data['overweight'] = container.is_overweight
@@ -208,6 +224,19 @@ class BookingViewSet(ViewSet):
             data['container_notes'] = container.notes
             data['products'] = products
 
+            if len(products):
+
+                for idxp, value in enumerate(products):
+                    key = F"product_1_{idxp+1}_"
+
+                    data[key+"product_id"] = value["product_id"]
+                    data[key+"commodity"] = value["commodity"]
+                    data[key+"weight"] = value["weight"]
+                    data[key+"product_fragile"] = value["product_fragile"]
+                    data[key+"product_haz"] = value["product_haz"]
+                    data[key+"product_damaged"] = value["product_damaged"]
+                    data[key+"reefer"] = value["reefer"]
+
             # serialzied_bookings = BookingSerializer(
             #     booking,
             #     context=({'request': request})
@@ -216,7 +245,7 @@ class BookingViewSet(ViewSet):
             # return Response(serialzied_bookings.data)
             return Response(data)
         except Booking.DoesNotExist as ex:
-            return Resposnse({'message': 'The requested order does not exist, or you do not have permission to access it.'},
+            return Response({'message': 'The requested order does not exist, or you do not have permission to access it.'},
                              status=status.HTTP_404_NOT_FOUND
                              )
         except Exception as ex:

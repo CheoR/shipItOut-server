@@ -1,5 +1,8 @@
 """Product ViewSet"""
 
+from api.models.appuser import AppUser
+from api.models.container import Container
+from api.models.booking import Booking
 from rest_framework import status
 from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
@@ -28,10 +31,15 @@ class ProductViewSet(ViewSet):
                 Response : JSON serialized list of Product types.
         """
 
-        user = request.auth.user
+        user = AppUser.objects.get(user=request.auth.user)
         print(user)
 
         try:
+            # bookings = Booking.objects.filter(user=user)
+            # container = Container.objects.filter(id=bookings.container.id)
+            # products = Product.objects.get(container__id=container.id)
+            # products = extract_product_info(products)
+            print("prodcs viwset")
             products = Product.objects.all()
             serialzied_products = ProductSerializer(
                 products,
