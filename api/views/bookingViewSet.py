@@ -87,11 +87,16 @@ class BookingViewSet(ViewSet):
                 data['id'] = booking.id
                 data['username'] = request.auth.user.username
                 data['full_name'] = F"{request.auth.user.first_name} {request.auth.user.last_name}"
+                data['phone'] = user.phone
+                data['role'] = user.role
+                data['company'] = user.company
+                data['email'] = request.auth.user.email
                 data['booking_status'] = status.status
                 data['booking'] = booking.booking
                 data['origin'] = booking.loading_origin
                 data['destination'] = booking.unloading_destination
                 data['pickup_appt'] = booking.pickup_appt
+                data['address'] = booking.pickup_address
                 data['service'] = service.name
                 data['voyage'] = voyage.voyage
                 data['vessel'] = vessel.name
@@ -108,8 +113,8 @@ class BookingViewSet(ViewSet):
                 data['port'] = port.code
                 data['port_name'] = port.name
                 data['port_location'] = port.location
-                data['port_cutoff'] = booking.port_cutoff
-                data['rail_cutoff'] = booking.rail_cutoff
+                data['port_cut'] = booking.port_cutoff
+                data['rail_cut'] = booking.rail_cutoff
                 data['document_submitted'] = document.are_docs_ready
                 data['money_owed'] = money.are_dues_paid
                 data['issues'] = booking.has_issue
@@ -120,6 +125,7 @@ class BookingViewSet(ViewSet):
                 bkg_list.append(data)
 
             return Response(bkg_list)
+            # return Response(serialzied_bookings.data)
         except Exception as ex:
             return HttpResponseServerError(ex)
 
@@ -167,6 +173,10 @@ class BookingViewSet(ViewSet):
             data['id'] = booking.id
             data['username'] = request.auth.user.username
             data['full_name'] = F"{request.auth.user.first_name} {request.auth.user.last_name}"
+            data['phone'] = user.phone
+            data['role'] = user.role
+            data['company'] = user.company
+            data['email'] = request.auth.user.email
             data['booking_status'] = status.status
             data['booking'] = booking.booking
             data['service'] = service.name
@@ -185,11 +195,12 @@ class BookingViewSet(ViewSet):
             data['origin'] = booking.loading_origin
             data['destination'] = booking.unloading_destination
             data['pickup_appt'] = booking.pickup_appt
+            data['address'] = booking.pickup_address
             data['port'] = port.code
             data['port_name'] = port.name
             data['port_location'] = port.location
-            data['port_cutoff'] = booking.port_cutoff
-            data['rail_cutoff'] = booking.rail_cutoff
+            data['rail_cut'] = booking.rail_cutoff
+            data['port_cut'] = booking.port_cutoff
             data['document_submitted'] = document.are_docs_ready
             data['money_owed'] = money.are_dues_paid
             data['issues'] = booking.has_issue
