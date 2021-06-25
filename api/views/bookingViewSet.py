@@ -246,87 +246,16 @@ class BookingViewSet(ViewSet):
             return Response(data)
         except Booking.DoesNotExist as ex:
             return Response({'message': 'The requested order does not exist, or you do not have permission to access it.'},
-                             status=status.HTTP_404_NOT_FOUND
-                             )
+                            status=status.HTTP_404_NOT_FOUND
+                            )
         except Exception as ex:
             return HttpResponseServerError(ex)
 
+    def destroy(self, request, pk):
+        booking = Booking.objects.get(pk=pk)
+        try:
+            booking.delete()
 
-# {
-#     "id": 4,
-#     "user": {
-#         "id": 1,
-#         "company": "Nitzsche, Howe and Hartmann",
-#         "role": "dispatch",
-#         "phone": "957-512-8694",
-#         "user": {
-#             "id": 1,
-#             "password": "pbkdf2_sha256$260000$hvXWZMa37Nd43rx6qnITUo$4kzCDHuXdXh29fRpDk7JYo4RqKIbkyGh2cye/iUvCkE=",
-#             "last_login": "2021-06-22T23:13:50.110058Z",
-#             "is_superuser": true,
-#             "username": "superuser_bob",
-#             "first_name": "Bobby",
-#             "last_name": "Hill",
-#             "email": "superuser@bob.com",
-#             "is_staff": true,
-#             "is_active": true,
-#             "date_joined": "2021-06-18T15:42:12Z",
-#             "groups": [],
-#             "user_permissions": []
-#         }
-#     },
-#     "booking": "USG2257588",
-#     "voyage_reference": {
-#         "id": 8,
-#         "voyage": "WCWC9742",
-#         "vessel": {
-#             "id": 9,
-#             "name": "Merops nubicus",
-#             "longitude": 2.8125,
-#             "latitude": 0.0,
-#             "service": {
-#                 "id": 4,
-#                 "name": "SE"
-#             }
-#         }
-#     },
-#     "container": {
-#         "id": 4,
-#         "container": "GNXI3314",
-#         "equipment_size": "40ST",
-#         "is_damaged": true,
-#         "is_need_inspection": true,
-#         "is_overweight": false,
-#         "is_in_use": false,
-#         "notes": "Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.",
-#         "container_status": {
-#             "id": 2,
-#             "status": "Port"
-#         }
-#     },
-#     "loading_origin": "Culianin",
-#     "unloading_destination": "Ängelholm",
-#     "pickup_appt": "2021-05-27T00:31:00Z",
-#     "port": {
-#         "id": 13,
-#         "name": "Port Arthur",
-#         "location": "Port Arthur",
-#         "code": "USPTA"
-#     },
-#     "port_cutoff": "2021-05-31T00:31:00Z",
-#     "rail_cutoff": null,
-#     "document": {
-#         "id": 2,
-#         "are_docs_ready": true
-#     },
-#     "due": {
-#         "id": 3,
-#         "are_dues_paid": true
-#     },
-#     "has_issue": true,
-#     "booking_status": {
-#         "id": 5,
-#         "status": "Closed"
-#     },
-#     "notes": "Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros."
-# }
+            return Response({}, status=status.HTTP_204_NO_CONTENT)
+        except Exception as ex:
+            return HttpResponseServerError(ex)

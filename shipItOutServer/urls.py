@@ -32,7 +32,7 @@ from api.views import CntrStatusViewSet
 from api.views import ContainerViewSet
 from api.views import ProductViewSet
 from api.views import BookingViewSet
-
+from api.views import BookingCreateViewSet
 
 # At any point, your urlpatterns can “include” other URLconf modules.
 #  This essentially “roots” a set of URLs below other ones.
@@ -62,6 +62,7 @@ router.register(r'bkgStatuses', BkgStatusViewSet, 'bkgStatus')
 router.register(r'cntrStatuses', CntrStatusViewSet, 'cntrStatus')
 router.register(r'containers', ContainerViewSet, 'container')
 router.register(r'products', ProductViewSet, 'product')
+router.register(r'create', BookingCreateViewSet, 'create')
 
 urlpatterns = [
     path('', include('api.urls', namespace='api')),
