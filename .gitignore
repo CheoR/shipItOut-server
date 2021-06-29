@@ -262,5 +262,6 @@ project_notes.md
 !data/*.sql
 !ShipItOut.png
 !ShipItOut_DrawIo.jpg
+!ShipItOut.gif
 
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
