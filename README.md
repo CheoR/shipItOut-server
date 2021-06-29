@@ -87,3 +87,7 @@ Open the [Latest ShipItOut db diagram](https://dbdiagram.io/d/60be3bdfb29a09603d
 <details>
   <img src="./assets/images/ShipItOut.png" alt="entity relationship diagram for Ship It Out database" />
 </details>
+
+## Wireframe
+
+<img src="./assets/images/ShipItOut_DrawIo.jpg" alt="Ship It Out wireframe" />

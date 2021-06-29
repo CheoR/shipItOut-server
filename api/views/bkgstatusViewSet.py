@@ -15,7 +15,7 @@ from api.serializers import BkgStatusSerializer
 class BkgStatusViewSet(ViewSet):
     """
         View module for handling requests about BkgStatuss.
-        ViewSet handles GET, POST, PUT, DELETE requests sent from client
+        ViewSet handles POSTrequests sent from client
         over HTTP protocol.
 
         BkgStatus ViewSet

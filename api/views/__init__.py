@@ -15,3 +15,4 @@ from .cntrstatusViewSet import CntrStatusViewSet
 from .containerViewSet import ContainerViewSet
 from .productViewSet import ProductViewSet
 from .bookingViewSet import BookingViewSet
+from .bookingCreateViewSet import BookingCreateViewSet

@@ -14,3 +14,6 @@ class Product(models.Model):
     is_damaged = models.BooleanField()
     is_reefer = models.BooleanField()
     container = models.ForeignKey("Container", on_delete=models.DO_NOTHING)
+
+    def __str__(self):
+        return F"{self.commodity} - container id: {self.container}"
