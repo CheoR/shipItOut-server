@@ -25,3 +25,6 @@ class Booking(models.Model):
     booking_status = models.ForeignKey(
         "BkgStatus", on_delete=models.DO_NOTHING)
     notes = models.TextField(default='', blank=True)
+
+    def __str__(self):
+        return F"{self.user.user_id} - booked {self.booking}"

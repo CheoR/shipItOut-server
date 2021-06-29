@@ -91,3 +91,9 @@ Open the [Latest ShipItOut db diagram](https://dbdiagram.io/d/60be3bdfb29a09603d
 ## Wireframe
 
 <img src="./assets/images/ShipItOut_DrawIo.jpg" alt="Ship It Out wireframe" />
+
+## Demo
+
+Work in progress live site: [ShipItOut](http://shipitout.herokuapp.com/)
+
+<img src="./assets/ShipItOut.gif" alt="Ship It Out demo" />
