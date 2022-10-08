@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/zsh
 
 # Note: This is only after you already have created your db, ran migations, migrate and filled it with data.
 # If you need to create fixtures, you can do something like

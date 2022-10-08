@@ -1,4 +1,4 @@
-from django.conf.urls import url
+from django.urls import include, re_path
 from .views import index
 
 urlpatterns = [
@@ -7,7 +7,7 @@ urlpatterns = [
     #  which means any future changes made to the url path,
     #  automatically updates all url definitions in view
     #  methods and templates.
-    url(r'^$', index, name='index'),
+    re_path(r'^$', index, name='index'),
 ]
 
 # Application namespaces of included URLconfs
