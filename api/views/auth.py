@@ -21,27 +21,18 @@ def login_user(request):
 
     # Load JSON string request body into dict
     req_body = json.loads(request.body.decode())
-
     # Pull relevant info if request is POST.
     if request.method == 'POST':
-        # Verify with Django-provided authentication method
         username = req_body['username']
         password = req_body['password']
         authenticated_user = authenticate(username=username, password=password)
 
-    # Token unique per user.
-    # Token used for future requests to identify user.
     if authenticated_user is not None:
-        # Authentication successful
         token = Token.objects.get(user=authenticated_user)
-
-        # Return as string
         data = json.dumps({"valid": True, "token": token.key})
-
         return HttpResponse(data, content_type='applicatoin/json')
 
     else:
-        # Bad login credentials.
         data = json.dumps({"valid": False})
         return HttpResponse(data, content_type='application/json', status=status.HTTP_401_UNAUTHORIZED)
 
@@ -60,7 +51,7 @@ def register_user(request):
     # number of form fields
     # TODO: replace with form validator
     if len(req_body) != 9:
-        data = json.dumps({"invalid": False})
+        data = json.dumps({"invalid: missing field": False})
         return HttpResponse(data, content_type='application/json', status=status.HTTP_400_BAD_REQUEST)
 
     # Create a new user with Django's built-in User.create_user method
