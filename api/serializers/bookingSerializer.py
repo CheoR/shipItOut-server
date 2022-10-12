@@ -4,7 +4,7 @@ from rest_framework import serializers
 
 from api.models import Booking
 from api.serializers import (
-    # PartialAppUserSerializer,
+    PartialAppUserSerializer,
     PartialPortSerializer,
     PartialVoyageSerializer,
     PartialContainerSerializer,
@@ -14,8 +14,8 @@ from api.serializers import (
 class BookingSerializer(serializers.ModelSerializer):
 	"""JSON serializer for Bookings"""
 
-	# carrier = PartialAppUserSerializer()
-	# agent = PartialAppUserSerializer()
+	carrier = PartialAppUserSerializer()
+	agent = PartialAppUserSerializer()
 	loading_port = PartialPortSerializer()
 	unloading_port = PartialPortSerializer()
 	voyage = PartialVoyageSerializer()
