@@ -85,7 +85,13 @@ To verify, reconnect with:
 Open the [Latest ShipItOut db diagram](https://dbdiagram.io/d/60be3bdfb29a09603d1855af) in the browser to view the tables and relationships for the database.
 
 <details>
+    <summary>Old Erd</summary>
   <img src="./assets/images/ShipItOut.png" alt="entity relationship diagram for Ship It Out database" />
+</details>
+
+<details>
+<summary>Updated Erd</summary>
+  <img src="./assets/images/ShipItOut2.png" alt="entity relationship diagram for Ship It Out de2 database" />
 </details>
 
 ## Wireframe
