@@ -7,13 +7,15 @@ class Product(models.Model):
     """
         Product model.
     """
-    commodity = models.CharField(max_length=50)
+
+    product = models.CharField(max_length=50)
     weight = models.FloatField()
-    is_fragile = models.BooleanField()
-    is_haz = models.BooleanField()
-    is_damaged = models.BooleanField()
-    is_reefer = models.BooleanField()
-    container = models.ForeignKey("Container", on_delete=models.DO_NOTHING)
+    is_fragile = models.BooleanField(default=False)
+    is_damaged = models.BooleanField(default=False)
+    is_reefer = models.BooleanField(default=False)
+    is_haz = models.BooleanField(default=False)
+
+    container = models.ForeignKey("Container", on_delete=models.SET_NULL, null=True, blank=True, related_name="products")
 
     def __str__(self):
-        return F"{self.commodity} - container id: {self.container}"
+        return F"container: {self.container} - {self.commodity}"

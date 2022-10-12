@@ -1,30 +1,86 @@
 """Booking model"""
 
 from django.db import models
+from django.utils import timezone
+from django.db.models import Count
+
+
+def _pickup_appt():
+    return timezone.now() + timezone.timedelta(days=7)
+
+def _port_cut():
+    return timezone.now() + timezone.timedelta(days=21)
+
+def _delivery_appt():
+    return timezone.now() + timezone.timedelta(days=60)
 
 
 class Booking(models.Model):
     """
         Booking model.
-    """
-    user = models.ForeignKey("AppUser", on_delete=models.DO_NOTHING)
-    booking = models.CharField(max_length=50)
-    voyage_reference = models.ForeignKey("Voyage", on_delete=models.DO_NOTHING)
-    container = models.ForeignKey("Container", on_delete=models.DO_NOTHING)
-    carrier = models.ForeignKey("Carrier", on_delete=models.DO_NOTHING)
-    loading_origin = models.CharField(max_length=50)
-    unloading_destination = models.CharField(max_length=50)
-    pickup_address = models.CharField(max_length=50)
-    pickup_appt = models.DateTimeField()
-    port = models.ForeignKey("Port", on_delete=models.DO_NOTHING)
-    port_cutoff = models.DateTimeField()
-    rail_cutoff = models.DateTimeField(blank=True, null=True)
-    document = models.ForeignKey("Document", on_delete=models.DO_NOTHING)
-    due = models.ForeignKey("Due", on_delete=models.DO_NOTHING)
-    has_issue = models.BooleanField()
-    booking_status = models.ForeignKey(
-        "BkgStatus", on_delete=models.DO_NOTHING)
-    notes = models.TextField(default='', blank=True)
+    """ 
 
-    def __str__(self):
-        return F"{self.user.user_id} - booked {self.booking}"
+    ERROR = -1
+    XX = 0
+    PENDING = 1
+    COMPLETE = 2
+    CLOSED = 3
+    ERROR = 4
+    
+    STATUS_CHOICES = [
+        ( ERROR, 'ERROR' ),
+        ( XX, '' ),
+        ( PENDING, 'PENDING' ),
+        ( COMPLETE, 'COMPLETE' ),
+        ( CLOSED, 'CLOSED' ),
+    ]
+
+    # TODO: move auto-increment generator from frontent to backend for booking
+    # check bookingViewSet for possible solution
+    booking = models.CharField(max_length=12, default="")
+
+    # since materials may be picked up at one address,
+    # but not loaded into a container for shipment,
+    # until it reaches another address, e.g. rail, warehouse
+    unloading_destination = models.CharField(max_length=80, default="")
+    loading_origin = models.CharField(max_length=80, default="")
+
+    pickup_address = models.CharField(max_length=80, default="")
+    pickup_appt = models.DateTimeField(default=_pickup_appt)
+
+    rail_cutoff = models.DateTimeField(blank=True, null=True)
+    port_cutoff = models.DateTimeField(default=_port_cut)
+
+    delivery_address = models.CharField(max_length=80, default="")
+    delivery_appt = models.DateTimeField(default=_delivery_appt)
+    
+    status = models.IntegerField(
+        choices=STATUS_CHOICES,
+        default=XX,
+    )
+
+    are_docs_ready = models.BooleanField(default=False)
+    are_dues_paid = models.BooleanField(default=False)
+
+    # TODO: use annotate to dynamically calcuate if associated bookings, container, products have issues
+    # docs, dues, booking status, container/product damage, container overweight, container needs inspection
+    has_issue = models.BooleanField(default=False)
+
+    notes = models.TextField(default="", blank=True, )
+
+    agent = models.ForeignKey("AppUser", on_delete=models.SET_NULL, null=True, blank=True, related_name="agent_bookings")
+    carrier = models.ForeignKey("AppUser", on_delete=models.SET_NULL, null=True, blank=True, related_name="carrier_bookings")
+    voyage = models.ForeignKey("Voyage", on_delete=models.SET_NULL, null=True, blank=True, related_name="voyage_bookings")
+    loading_port = models.ForeignKey("Port", on_delete=models.SET_NULL, null=True, blank=True, related_name="loading_port_bookings")
+    unloading_port = models.ForeignKey("Port", on_delete=models.SET_NULL, null=True, blank=True, related_name="unloading_port_bookings")
+
+    @property
+    def container_count(self):
+        return self.containers.count()
+    
+    @property
+    def product_count(self):
+        _count = 0
+        for container in self.containers.all():
+            _count += container.products.count()
+        return _count

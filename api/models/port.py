@@ -7,6 +7,6 @@ class Port(models.Model):
     """
         Port model.
     """
+
     name = models.CharField(max_length=50)
-    location = models.CharField(max_length=50)
     code = models.CharField(max_length=5)
