@@ -1,4 +1,4 @@
-"""Vessel Serializer"""
+"""Default Vessel Serializer"""
 
 from rest_framework import serializers
 
@@ -14,13 +14,3 @@ class VesselSerializer(serializers.ModelSerializer):
         # fields = (
         #     'id', 'name',
         # )
-
-        depth = 5
-
-
-class ParitalVesselSerializer(VesselSerializer):
-    """JSON serializer for Vessels with some fields excluded"""
-
-    class Meta:
-        model = Vessel
-        exclude = ('id', 'name', )

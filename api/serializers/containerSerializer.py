@@ -1,30 +1,126 @@
 """Container Serializer"""
 
-from api.serializers.cntrstatusSerializer import CntrStatusSerializer
 from rest_framework import serializers
 
-from api.models import Container
+from api.models import Booking, Container
+from api.serializers import PartialProductSerializer
 
 
-class ContainerSerializer(serializers.ModelSerializer):
-    """JSON serializer for Categories"""
+class ProductBookingSerializer(serializers.ModelSerializer):
 
-    container_status = CntrStatusSerializer()
+    class Meta:
+        model = Booking
+        fields = ('booking', )
+
+
+class ContainerProductSerializer(serializers.ModelSerializer):
+    pass
+
+
+class ContainerRetrieveViewSerializer(serializers.ModelSerializer):
+    booking = ProductBookingSerializer()
+
+    equipment_size_label = serializers.SerializerMethodField()
+    equipment_location_label = serializers.SerializerMethodField()
+    product_count = serializers.SerializerMethodField()
 
     class Meta:
         model = Container
-        fields = ('id', 'container', 'equipment_size',
-                  'container_status', 'is_damaged', 'is_need_inspection',
-                  'is_in_use', 'notes')
-        # depth = 5
+        fields = '__all__'
+
+    def get_product_count(self, obj):
+        return obj.product_count
+
+    def get_equipment_size_label(self, obj):
+        """Turn Enum choice equipment_size selection from number into human-readble string."""
+        return obj.get_equipment_size_display()
+
+    def get_equipment_location_label(self, obj):
+        """Turn Enum choice equipment_location selection from number into human-readble string."""
+        return obj.get_equipment_location_display()
 
     def to_representation(self, obj):
         """Flatten key,values from one-level deep"""
         representation = super().to_representation(obj)
-        cs_representation = representation.pop('container_status')
-        for key in cs_representation:
-            if key == 'id':
-                continue
-            representation[key] = cs_representation[key]
 
+        cs_representation = representation.pop('booking')
+        for key in cs_representation:
+            representation[key] = cs_representation[key]
         return representation
+
+
+class ContainerListViewSerializer(serializers.ModelSerializer):
+    booking = ProductBookingSerializer()
+
+    equipment_size = serializers.SerializerMethodField()
+    equipment_location = serializers.SerializerMethodField()
+    product_count = serializers.SerializerMethodField()
+
+    class Meta:
+        model = Container
+        fields = '__all__'
+
+    def get_product_count(self, obj):
+        return obj.product_count
+
+    def get_equipment_size(self, obj):
+        """Turn Enum choice equipment_size selection from number into human-readble string."""
+        return obj.get_equipment_size_display()
+
+    def get_equipment_location(self, obj):
+        """Turn Enum choice equipment_location selection from number into human-readble string."""
+        return obj.get_equipment_location_display()
+
+    def to_representation(self, obj):
+        """Flatten key,values from one-level deep"""
+        representation = super().to_representation(obj)
+
+        cs_representation = representation.pop('booking')
+        for key in cs_representation:
+            representation[key] = cs_representation[key]
+        return representation
+
+
+
+class ContainerSerializer(serializers.ModelSerializer):
+    """JSON serializer for Container"""
+    
+    product_count = serializers.SerializerMethodField()
+
+    class Meta:
+        model = Container
+        fields = '__all__'
+        # fields = (
+        #     'id', 'container', 'equipment_size', 'is_overweight',
+        #     'equipment_location', 'is_damaged', 'is_need_inspection',
+        #     'is_in_use'
+        # )
+
+        depth = 5
+
+    def get_product_count(self, obj):
+        return obj.product_count
+
+
+class PartialContainerSerializer(ContainerSerializer):
+    """JSON serializer for Container with some fields excluded"""
+
+    products = PartialProductSerializer(read_only=True, many=True)
+    equipment_size = serializers.SerializerMethodField()
+    equipment_location = serializers.SerializerMethodField()
+
+
+    class Meta:
+        model = Container
+        fields = '__all__'
+        # exclude = ('booking', )
+
+        depth = 1
+
+    def get_equipment_size(self, obj):
+        """Turn Enum choice equipment_size selection from number into human-readble string."""
+        return obj.get_equipment_size_display()
+
+    def get_equipment_location(self, obj):
+        """Turn Enum choice equipment_location selection from number into human-readble string."""
+        return obj.get_equipment_location_display()

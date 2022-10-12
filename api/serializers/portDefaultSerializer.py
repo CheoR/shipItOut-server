@@ -14,13 +14,3 @@ class PortSerializer(serializers.ModelSerializer):
         # fields = (
         #     'id', 'name', 'code',
         # )
-
-        depth = 5
-
-
-class PartialPortSerializer(PortSerializer):
-    """JSON serializer for Ports with some fields excluded"""
-
-    class Meta:
-        model = Port
-        exclude = ('id', )
