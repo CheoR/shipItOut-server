@@ -65,10 +65,34 @@
 },
 {
   "model": "authtoken.token",
+  "pk": "40ef6a051afcdba48c664e722e1601e745a9e419",
+  "fields": {
+    "user": 24,
+    "created": "2022-02-16T14:27:12.935Z"
+  }
+},
+{
+  "model": "authtoken.token",
+  "pk": "61cc24d858ffdca0d99a4b1fcb3ec061d7907ba0",
+  "fields": {
+    "user": 25,
+    "created": "2022-02-17T14:48:21.973Z"
+  }
+},
+{
+  "model": "authtoken.token",
   "pk": "708474219beefbda3bc61ad5e9d9b31c81ca7b93",
   "fields": {
     "user": 19,
     "created": "2022-02-14T13:25:52.593Z"
+  }
+},
+{
+  "model": "authtoken.token",
+  "pk": "75071c4444dca8cbb716e1fd263c67731905ab0b",
+  "fields": {
+    "user": 23,
+    "created": "2022-02-16T14:24:21.050Z"
   }
 },
 {

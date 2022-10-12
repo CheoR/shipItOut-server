@@ -196,5 +196,38 @@
     "phone": "1234567890",
     "account_type": 3
   }
+},
+{
+  "model": "api.appuser",
+  "pk": 20,
+  "fields": {
+    "user": 23,
+    "company": "full stack trucking",
+    "role": "trucker",
+    "phone": "8312314535",
+    "account_type": 4
+  }
+},
+{
+  "model": "api.appuser",
+  "pk": 21,
+  "fields": {
+    "user": 24,
+    "company": "full stack trucking",
+    "role": "dispatch",
+    "phone": "8312314535",
+    "account_type": 4
+  }
+},
+{
+  "model": "api.appuser",
+  "pk": 22,
+  "fields": {
+    "user": 25,
+    "company": "agent3 shipping",
+    "role": "agent3",
+    "phone": "8121323232",
+    "account_type": 1
+  }
 }
 ]

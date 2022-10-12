@@ -1,0 +1,41 @@
+[
+{
+  "model": "api.product",
+  "pk": 1,
+  "fields": {
+    "product": "bananas",
+    "weight": 100.2,
+    "is_fragile": true,
+    "is_damaged": false,
+    "is_reefer": true,
+    "is_haz": false,
+    "container": 2
+  }
+},
+{
+  "model": "api.product",
+  "pk": 2,
+  "fields": {
+    "product": "apples",
+    "weight": 50.0,
+    "is_fragile": true,
+    "is_damaged": false,
+    "is_reefer": true,
+    "is_haz": false,
+    "container": 2
+  }
+},
+{
+  "model": "api.product",
+  "pk": 3,
+  "fields": {
+    "product": "totally not drugs",
+    "weight": 2000.0,
+    "is_fragile": true,
+    "is_damaged": false,
+    "is_reefer": false,
+    "is_haz": true,
+    "container": 6
+  }
+}
+]
