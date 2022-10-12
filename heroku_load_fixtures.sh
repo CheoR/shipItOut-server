@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/zsh
 
 # To load fixures
 # 
@@ -11,7 +11,7 @@
 appName="api"
 pathToFixtures="data/fixtures"
 
-declare -a fixturesArray=(appusers services vessels voyages carriers ports documents dues bkgstatuses cntrstatuses containers products bookings)
+declare -a fixturesArray=(appusers ports vessels voyages bookings containers products)
 
 
 echo -e '\n============================='

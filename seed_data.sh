@@ -32,7 +32,7 @@ appName="api"
 pathToFixtures="data/fixtures"
 
 declare -a tablesToDropArray=($appName authtoken auth)
-declare -a fixturesArray=(users tokens appusers services vessels voyages carriers ports documents dues bkgstatuses cntrstatuses containers products bookings)
+declare -a fixturesArray=(users tokens appusers ports vessels voyages bookings containers products)
 
 
 echo -e '\n==============='
