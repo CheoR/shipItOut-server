@@ -69,7 +69,7 @@ To verify, reconnect with:
 
 7.  Before running server make sure to update `local.py` file in `settings` to fit your localhost.
 
-    $ mv shipItOutServer/settings/local.py.example shipItOutServer/settings/local.py
+    $ mv server/settings/local.py.example server/settings/local.py
 
 8.  Run migrations and migrate for app
 

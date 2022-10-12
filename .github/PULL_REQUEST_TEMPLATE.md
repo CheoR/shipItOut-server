@@ -27,7 +27,7 @@ Please also list any relevant details for your tests
 
 `git fetch --all`
 `git checkout <branch-name>`
-`python3 manage.py runserver --settings=shipItOutServer.settings.local `
+`python3 manage.py runserver --settings=server.settings.local `
 
 ## PostMan
 
