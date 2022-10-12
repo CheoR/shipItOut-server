@@ -51,7 +51,7 @@ def register_user(request):
     # number of form fields
     # TODO: replace with form validator
     if len(req_body) != 9:
-        data = json.dumps({"invalid: missing field": False})
+        data = json.dumps({"valid:": False, "reason": "missing fields"})
         return HttpResponse(data, content_type='application/json', status=status.HTTP_400_BAD_REQUEST)
 
     # Create a new user with Django's built-in User.create_user method
@@ -85,6 +85,6 @@ def register_user(request):
     token = Token.objects.create(user=new_user)
 
     # Return token to client.
-    data = json.dumps({"token": token.key})
+    data = json.dumps({"token": token.key, "valid": True})
 
     return HttpResponse(data, content_type='application/json', status=status.HTTP_201_CREATED)
