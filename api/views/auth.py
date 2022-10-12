@@ -15,16 +15,12 @@ from api.models import AppUser
 def login_user(request):
     """
         Handles AppUser authentication.
-
         Method args:
             request - The full HTTP request object.
     """
 
     # Load JSON string request body into dict
     req_body = json.loads(request.body.decode())
-
-    print("This is what the user sent")
-    print(req_body)
 
     # Pull relevant info if request is POST.
     if request.method == 'POST':
@@ -54,7 +50,6 @@ def login_user(request):
 def register_user(request):
     """
         Create new AppUser for authentication.
-
         Method args:
             request - The full HTTP request object.
     """
@@ -64,7 +59,7 @@ def register_user(request):
 
     # number of form fields
     # TODO: replace with form validator
-    if len(req_body) != 8:
+    if len(req_body) != 9:
         data = json.dumps({"invalid": False})
         return HttpResponse(data, content_type='application/json', status=status.HTTP_400_BAD_REQUEST)
 
@@ -86,7 +81,8 @@ def register_user(request):
         company=req_body['company'],
         role=req_body['role'],
         phone=req_body['phone'],
-        user=new_user
+        account_type=req_body['account_type'],
+        user=new_user,
     )
 
     # This is redundanta has the create method above also saves.
