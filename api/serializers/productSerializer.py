@@ -56,8 +56,8 @@ class ProductSerializer(serializers.ModelSerializer):
         model = Product
         fields = '__all__'
         # fields = (
-        #     'id', 'commodity', 'weight', 'is_fragile', 'is_haz',
-        #     'is_damaged', 'is_reefer', 'container',
+        #     'id', 'product', 'weight', 'is_fragile', 'is_haz',
+        #     'is_product_damaged', 'is_reefer', 'container',
         # )
 
         # depth = 3

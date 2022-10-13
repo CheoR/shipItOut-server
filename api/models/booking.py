@@ -27,7 +27,7 @@ class Booking(models.Model):
     CLOSED = 3
     ERROR = 4
     
-    STATUS_CHOICES = [
+    BOOKING_STATUS_CHOICES = [
         ( ERROR, 'ERROR' ),
         ( XX, '' ),
         ( PENDING, 'PENDING' ),
@@ -42,8 +42,8 @@ class Booking(models.Model):
     # since materials may be picked up at one address,
     # but not loaded into a container for shipment,
     # until it reaches another address, e.g. rail, warehouse
-    unloading_destination = models.CharField(max_length=80, default="")
-    loading_origin = models.CharField(max_length=80, default="")
+    unloading_destination_address = models.CharField(max_length=80, default="")
+    loading_origin_address = models.CharField(max_length=80, default="")
 
     pickup_address = models.CharField(max_length=80, default="")
     pickup_appt = models.DateTimeField(default=_pickup_appt)
@@ -54,19 +54,19 @@ class Booking(models.Model):
     delivery_address = models.CharField(max_length=80, default="")
     delivery_appt = models.DateTimeField(default=_delivery_appt)
     
-    status = models.IntegerField(
-        choices=STATUS_CHOICES,
+    booking_status = models.IntegerField(
+        choices=BOOKING_STATUS_CHOICES,
         default=XX,
     )
 
-    are_docs_ready = models.BooleanField(default=False)
+    are_documents_ready = models.BooleanField(default=False)
     are_dues_paid = models.BooleanField(default=False)
 
     # TODO: use annotate to dynamically calcuate if associated bookings, container, products have issues
     # docs, dues, booking status, container/product damage, container overweight, container needs inspection
     has_issue = models.BooleanField(default=False)
 
-    notes = models.TextField(default="", blank=True, )
+    booking_notes = models.TextField(default="", blank=True, )
 
     agent = models.ForeignKey("AppUser", on_delete=models.SET_NULL, null=True, blank=True, related_name="agent_bookings")
     carrier = models.ForeignKey("AppUser", on_delete=models.SET_NULL, null=True, blank=True, related_name="carrier_bookings")

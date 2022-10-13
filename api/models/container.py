@@ -52,7 +52,7 @@ class Container(models.Model):
     ]
 
     container = models.CharField(max_length=8)
-    equipment_size = models.IntegerField(
+    equipment_type = models.IntegerField(
         choices=EQUIPMENT_CHOICES,
         default=XX00,
     )
@@ -64,12 +64,13 @@ class Container(models.Model):
 
     booking = models.ForeignKey("Booking", on_delete=models.SET_NULL, null=True, blank=True, related_name="containers")
 
-    is_need_inspection = models.BooleanField(default=False)
+    is_needs_inspection = models.BooleanField(default=False)
     # TODO: make property, calculate using annotate to dynamically calcuate if container is overweight
     is_overweight = models.BooleanField(default=False)
-    is_damaged = models.BooleanField(default=False)
+    is_container_damaged = models.BooleanField(default=False)
     # TODO: make property, calculate using annotate to dynamically calcuate if associated to a booking
     is_in_use = models.BooleanField(default=False)
+    container_notes = models.TextField(default="", blank=True, )
 
     @property
     def product_count(self):

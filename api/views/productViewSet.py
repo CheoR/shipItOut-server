@@ -31,10 +31,11 @@ class ProductViewSet(ViewSet):
         product = Product.objects.create(
             product=request.data['product'],
             weight=request.data['weight'],
-            is_damaged=request.data['is_damaged'],
+            is_product_damaged=request.data['is_product_damaged'],
             is_fragile=request.data['is_fragile'],
             is_reefer=request.data['is_reefer'],
             is_haz=request.data['is_haz'],
+            product_notes=request.data['product_notes'],
             container=container,
         )
 
@@ -101,10 +102,11 @@ class ProductViewSet(ViewSet):
         
         product.product = request.data['product']
         product.weight = request.data['weight']
-        product.is_damaged = request.data['is_damaged']
+        product.is_product_damaged = request.data['is_product_damaged']
         product.is_fragile = request.data['is_fragile']
         product.is_reefer = request.data['is_reefer']
         product.is_haz = request.data['is_haz']
+        product.product_notes = request.data['product_notes']
         product.container = container
 
         product.save()

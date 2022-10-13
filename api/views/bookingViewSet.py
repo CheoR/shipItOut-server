@@ -55,18 +55,19 @@ class BookingViewSet(ViewSet):
 			# TODO: User Generator
 			booking=''.join(random.sample(
 				string.ascii_uppercase + string.digits, k=10)),
-			unloading_destination=request.data['unloading_destination'],
-			loading_origin=request.data['loading_origin'],
+			unloading_destination_address=request.data['unloading_destination_address'],
+			loading_origin_address=request.data['loading_origin_address'],
 			pickup_address=request.data['pickup_address'],
 			pickup_appt=request.data['pickup_appt'],
 			rail_cutoff=request.data['rail_cutoff'],
 			port_cutoff=request.data['port_cutoff'],
 			delivery_address=request.data['delivery_address'],
 			delivery_appt=request.data['delivery_appt'],
-			status=1, # Booking.PENDING
-			are_docs_ready=False,
+			booking_status=1, # Booking.PENDING
+			are_documents_ready=False,
 			are_dues_paid=False,
-			notes=request.data['booking_notes'],
+			has_issue=False,
+			booking_notes=request.data['booking_notes'],
 			agent=agent,
 			carrier=carrier,
 			voyage=voyage,
@@ -137,18 +138,18 @@ class BookingViewSet(ViewSet):
 		loading_port = Port.objects.get(pk=request.data['loading_port'])
 		unloading_port = Port.objects.get(pk=request.data['unloading_port'])
 
-		booking.unloading_destination = request.data['unloading_destination']
-		booking.loading_origin = request.data['loading_origin']
+		booking.unloading_destination_address = request.data['unloading_destination_address']
+		booking.loading_origin_address = request.data['loading_origin_address']
 		booking.pickup_address = request.data['pickup_address']
 		booking.pickup_appt = request.data['pickup_appt']
 		booking.rail_cutoff = request.data['rail_cutoff']
 		booking.port_cutoff = request.data['port_cutoff']
 		booking.delivery_address = request.data['delivery_address']
 		booking.delivery_appt = request.data['delivery_appt']
-		# booking.status = request.data['status']
-		booking.are_docs_ready = request.data['are_docs_ready']
+		# booking.booking_status = request.data['booking_status']
+		booking.are_documents_ready = request.data['are_documents_ready']
 		booking.are_dues_paid = request.data['are_dues_paid']
-		booking.notes = request.data['booking_notes']
+		booking.booking_notes = request.data['booking_notes']
 
 		booking.agent = agent
 		booking.carrier = carrier

@@ -108,6 +108,7 @@ class AppUserViewSet(ViewSet):
         """
 
         try:
+            # TODO: confirm 4 is CARRIER
             carriers = AppUser.objects.filter(account_type=4).distinct('company')
 
             serializer = AppUserCarrierSerializer(

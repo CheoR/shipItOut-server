@@ -4,10 +4,10 @@
   "pk": 2,
   "fields": {
     "container": "KFJL3381",
-    "equipment_size": 1,
+    "equipment_type": 1,
     "equipment_location": 6,
     "booking": 1,
-    "is_need_inspection": false,
+    "is_needs_inspection": false,
     "is_overweight": false,
     "is_damaged": false,
     "is_in_use": true
@@ -18,10 +18,10 @@
   "pk": 3,
   "fields": {
     "container": "TOTX0380",
-    "equipment_size": 2,
+    "equipment_type": 2,
     "equipment_location": 6,
     "booking": 5,
-    "is_need_inspection": false,
+    "is_needs_inspection": false,
     "is_overweight": false,
     "is_damaged": false,
     "is_in_use": true
@@ -32,10 +32,10 @@
   "pk": 4,
   "fields": {
     "container": "GNXI3314",
-    "equipment_size": 3,
+    "equipment_type": 3,
     "equipment_location": 6,
     "booking": 6,
-    "is_need_inspection": false,
+    "is_needs_inspection": false,
     "is_overweight": false,
     "is_damaged": false,
     "is_in_use": true
@@ -46,10 +46,10 @@
   "pk": 5,
   "fields": {
     "container": "BZAJ1118",
-    "equipment_size": 1,
+    "equipment_type": 1,
     "equipment_location": 6,
     "booking": 7,
-    "is_need_inspection": false,
+    "is_needs_inspection": false,
     "is_overweight": false,
     "is_damaged": false,
     "is_in_use": true
@@ -60,10 +60,10 @@
   "pk": 6,
   "fields": {
     "container": "WUSA2162",
-    "equipment_size": 3,
+    "equipment_type": 3,
     "equipment_location": 6,
     "booking": 1,
-    "is_need_inspection": false,
+    "is_needs_inspection": false,
     "is_overweight": false,
     "is_damaged": false,
     "is_in_use": true

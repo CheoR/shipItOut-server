@@ -3,7 +3,7 @@
   "model": "api.product",
   "pk": 1,
   "fields": {
-    "commodity": "Yogurt - Strawberry, 175 Gr",
+    "product": "Yogurt - Strawberry, 175 Gr",
     "weight": 2813.0,
     "is_fragile": false,
     "is_damaged": false,
@@ -16,7 +16,7 @@
   "model": "api.product",
   "pk": 2,
   "fields": {
-    "commodity": "Ecolab - Balanced Fusion",
+    "product": "Ecolab - Balanced Fusion",
     "weight": 2674.0,
     "is_fragile": false,
     "is_damaged": false,
@@ -29,7 +29,7 @@
   "model": "api.product",
   "pk": 4,
   "fields": {
-    "commodity": "Vodka - Hot, Lnferno",
+    "product": "Vodka - Hot, Lnferno",
     "weight": 1967.0,
     "is_fragile": true,
     "is_damaged": false,
@@ -42,7 +42,7 @@
   "model": "api.product",
   "pk": 5,
   "fields": {
-    "commodity": "Olives - Kalamata New & Improved",
+    "product": "Olives - Kalamata New & Improved",
     "weight": 1219.0,
     "is_fragile": true,
     "is_damaged": true,
@@ -55,7 +55,7 @@
   "model": "api.product",
   "pk": 6,
   "fields": {
-    "commodity": "Wine - Casillero Del Diablo",
+    "product": "Wine - Casillero Del Diablo",
     "weight": 1521.0,
     "is_fragile": true,
     "is_damaged": false,
@@ -68,7 +68,7 @@
   "model": "api.product",
   "pk": 7,
   "fields": {
-    "commodity": "Salsify, Organic",
+    "product": "Salsify, Organic",
     "weight": 1611.0,
     "is_fragile": false,
     "is_damaged": false,
@@ -81,7 +81,7 @@
   "model": "api.product",
   "pk": 8,
   "fields": {
-    "commodity": "Black Currants",
+    "product": "Black Currants",
     "weight": 1492.0,
     "is_fragile": false,
     "is_damaged": false,
@@ -94,7 +94,7 @@
   "model": "api.product",
   "pk": 10,
   "fields": {
-    "commodity": "Icecream Bar - Del Monte",
+    "product": "Icecream Bar - Del Monte",
     "weight": 5000.0,
     "is_fragile": false,
     "is_damaged": false,
@@ -107,7 +107,7 @@
   "model": "api.product",
   "pk": 11,
   "fields": {
-    "commodity": "Salmon - Canned",
+    "product": "Salmon - Canned",
     "weight": 1500.0,
     "is_fragile": false,
     "is_damaged": false,
@@ -120,7 +120,7 @@
   "model": "api.product",
   "pk": 12,
   "fields": {
-    "commodity": "Ecolab - Orange Frc, Cleaner",
+    "product": "Ecolab - Orange Frc, Cleaner",
     "weight": 1588.0,
     "is_fragile": false,
     "is_damaged": false,
@@ -133,7 +133,7 @@
   "model": "api.product",
   "pk": 13,
   "fields": {
-    "commodity": "Beef - Rib Roast, Cap On",
+    "product": "Beef - Rib Roast, Cap On",
     "weight": 5025.0,
     "is_fragile": false,
     "is_damaged": false,
@@ -146,7 +146,7 @@
   "model": "api.product",
   "pk": 14,
   "fields": {
-    "commodity": "Pork - Ground",
+    "product": "Pork - Ground",
     "weight": 5000.0,
     "is_fragile": false,
     "is_damaged": false,
@@ -159,7 +159,7 @@
   "model": "api.product",
   "pk": 15,
   "fields": {
-    "commodity": "Oil - Shortening,liqud, Fry",
+    "product": "Oil - Shortening,liqud, Fry",
     "weight": 470.0,
     "is_fragile": false,
     "is_damaged": false,

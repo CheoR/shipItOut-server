@@ -34,11 +34,13 @@ class ContainerViewSet(ViewSet):
         print('*' * 10, "passed data", '*' * 10)
         container = Container.objects.create(
             container=request.data['container'],
-            equipment_size=request.data['equipment_size'],
+            equipment_type=request.data['equipment_type'],
             equipment_location=request.data['equipment_location'],
-            is_need_inspection=request.data['is_need_inspection'],
-            # is_overweight=request.data['is_overweight'],
-            is_damaged=request.data['is_damaged'],
+            is_container_damaged=request.data['is_container_damaged'],
+            is_needs_inspection=request.data['is_needs_inspection'],
+            is_overweight=request.data['is_overweight'],
+            is_in_use=True,
+            container_notes = models.TextField(default="", blank=True, ),
             booking=booking, # request.data['booking'],
         )
 
@@ -103,9 +105,10 @@ class ContainerViewSet(ViewSet):
         container = Container.objects.get(pk=pk)
 
         container.container = request.data['container']
-        container.is_need_inspection = request.data['is_need_inspection']
-        # container.is_overweight = request.data['is_overweight']
-        container.is_damaged = request.data['is_damaged']
+        container.is_container_damaged = request.data['is_container_damaged']
+        container.is_needs_inspection = request.data['is_needs_inspection']
+        container.is_overweight = request.data['is_overweight']
+        container.container_notes = request.data['container_notes']
 
         container.booking = booking
 
