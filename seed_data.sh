@@ -32,6 +32,7 @@ appName="api"
 pathToFixtures="data/fixtures"
 
 declare -a tablesToDropArray=($appName authtoken auth)
+# TODO: dump new data fixtures to reflect new db configutation
 declare -a fixturesArray=(users tokens appusers ports vessels voyages bookings containers products)
 
 

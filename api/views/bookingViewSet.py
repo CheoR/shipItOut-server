@@ -66,7 +66,7 @@ class BookingViewSet(ViewSet):
 			status=1, # Booking.PENDING
 			are_docs_ready=False,
 			are_dues_paid=False,
-			notes=request.data['notes'],
+			notes=request.data['booking_notes'],
 			agent=agent,
 			carrier=carrier,
 			voyage=voyage,
@@ -148,7 +148,7 @@ class BookingViewSet(ViewSet):
 		# booking.status = request.data['status']
 		booking.are_docs_ready = request.data['are_docs_ready']
 		booking.are_dues_paid = request.data['are_dues_paid']
-		booking.notes = request.data['notes']
+		booking.notes = request.data['booking_notes']
 
 		booking.agent = agent
 		booking.carrier = carrier
