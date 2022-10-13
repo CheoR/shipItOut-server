@@ -57,7 +57,7 @@ class Container(models.Model):
         default=XX00,
     )
 
-    equipment_location = models.IntegerField(
+    container_location = models.IntegerField(
         choices=LOCATION_CHOICES,
         default=YARD,
     )

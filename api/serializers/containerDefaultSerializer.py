@@ -13,6 +13,6 @@ class ContainerDefaultSerializer(serializers.ModelSerializer):
         fields = '__all__'
         # fields = (
         #     'id', 'container', 'equipment_type', 'is_overweight',
-        #     'equipment_location', 'is_damaged', 'is_needs_inspection',
+        #     'container_location', 'is_damaged', 'is_needs_inspection',
         #     'is_in_use'
         # )

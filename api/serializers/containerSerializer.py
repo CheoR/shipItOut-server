@@ -21,7 +21,7 @@ class ContainerRetrieveViewSerializer(serializers.ModelSerializer):
     booking = ProductBookingSerializer()
 
     equipment_type_label = serializers.SerializerMethodField()
-    equipment_location_label = serializers.SerializerMethodField()
+    container_location_label = serializers.SerializerMethodField()
     product_count = serializers.SerializerMethodField()
 
     class Meta:
@@ -35,9 +35,9 @@ class ContainerRetrieveViewSerializer(serializers.ModelSerializer):
         """Turn Enum choice equipment_type selection from number into human-readble string."""
         return obj.get_equipment_type_display()
 
-    def get_equipment_location_label(self, obj):
-        """Turn Enum choice equipment_location selection from number into human-readble string."""
-        return obj.get_equipment_location_display()
+    def get_container_location_label(self, obj):
+        """Turn Enum choice container_location selection from number into human-readble string."""
+        return obj.get_container_location_display()
 
     def to_representation(self, obj):
         """Flatten key,values from one-level deep"""
@@ -53,7 +53,7 @@ class ContainerListViewSerializer(serializers.ModelSerializer):
     booking = ProductBookingSerializer()
 
     equipment_type = serializers.SerializerMethodField()
-    equipment_location = serializers.SerializerMethodField()
+    container_location = serializers.SerializerMethodField()
     product_count = serializers.SerializerMethodField()
 
     class Meta:
@@ -67,9 +67,9 @@ class ContainerListViewSerializer(serializers.ModelSerializer):
         """Turn Enum choice equipment_type selection from number into human-readble string."""
         return obj.get_equipment_type_display()
 
-    def get_equipment_location(self, obj):
-        """Turn Enum choice equipment_location selection from number into human-readble string."""
-        return obj.get_equipment_location_display()
+    def get_container_location(self, obj):
+        """Turn Enum choice container_location selection from number into human-readble string."""
+        return obj.get_container_location_display()
 
     def to_representation(self, obj):
         """Flatten key,values from one-level deep"""
@@ -92,7 +92,7 @@ class ContainerSerializer(serializers.ModelSerializer):
         fields = '__all__'
         # fields = (
         #     'id', 'container', 'equipment_type', 'is_overweight',
-        #     'equipment_location', 'is_container_damaged', 'is_needs_inspection',
+        #     'container_location', 'is_container_damaged', 'is_needs_inspection',
         #     'is_in_use'
         # )
 
@@ -107,7 +107,7 @@ class PartialContainerSerializer(ContainerSerializer):
 
     products = PartialProductSerializer(read_only=True, many=True)
     equipment_type = serializers.SerializerMethodField()
-    equipment_location = serializers.SerializerMethodField()
+    container_location = serializers.SerializerMethodField()
 
 
     class Meta:
@@ -121,6 +121,6 @@ class PartialContainerSerializer(ContainerSerializer):
         """Turn Enum choice equipment_type selection from number into human-readble string."""
         return obj.get_equipment_type_display()
 
-    def get_equipment_location(self, obj):
-        """Turn Enum choice equipment_location selection from number into human-readble string."""
-        return obj.get_equipment_location_display()
+    def get_container_location(self, obj):
+        """Turn Enum choice container_location selection from number into human-readble string."""
+        return obj.get_container_location_display()

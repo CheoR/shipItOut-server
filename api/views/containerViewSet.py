@@ -35,7 +35,7 @@ class ContainerViewSet(ViewSet):
         container = Container.objects.create(
             container=request.data['container'],
             equipment_type=request.data['equipment_type'],
-            equipment_location=request.data['equipment_location'],
+            container_location=request.data['container_location'],
             is_container_damaged=request.data['is_container_damaged'],
             is_needs_inspection=request.data['is_needs_inspection'],
             is_overweight=request.data['is_overweight'],
