@@ -20,7 +20,7 @@ class BookingSerializer(serializers.ModelSerializer):
 	unloading_port = PartialPortSerializer()
 	voyage = PartialVoyageSerializer()
 
-	status = serializers.SerializerMethodField()
+	booking_status = serializers.SerializerMethodField()
 	container_count = serializers.SerializerMethodField()
 	product_count = serializers.SerializerMethodField()
 
@@ -51,9 +51,9 @@ class BookingSerializer(serializers.ModelSerializer):
 		serializer = PartialContainerSerializer(obj.containers, many=True)
 		return serializer.data
 		
-	def get_status(self, obj):
+	def get_booking_status(self, obj):
 		"""Turn Enum choice status selection from number into human-readble string."""
-		return obj.get_status_display()
+		return obj.get_booking_status_display()
 
 	def to_representation(self, obj):
 		"""Flatten key,values from one-level deep"""
