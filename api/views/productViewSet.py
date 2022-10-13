@@ -34,7 +34,7 @@ class ProductViewSet(ViewSet):
             is_product_damaged=request.data['is_product_damaged'],
             is_fragile=request.data['is_fragile'],
             is_reefer=request.data['is_reefer'],
-            is_haz=request.data['is_haz'],
+            is_hazardous=request.data['is_hazardous'],
             product_notes=request.data['product_notes'],
             container=container,
         )
@@ -105,7 +105,7 @@ class ProductViewSet(ViewSet):
         product.is_product_damaged = request.data['is_product_damaged']
         product.is_fragile = request.data['is_fragile']
         product.is_reefer = request.data['is_reefer']
-        product.is_haz = request.data['is_haz']
+        product.is_hazardous = request.data['is_hazardous']
         product.product_notes = request.data['product_notes']
         product.container = container
 

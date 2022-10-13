@@ -56,7 +56,7 @@ class ProductSerializer(serializers.ModelSerializer):
         model = Product
         fields = '__all__'
         # fields = (
-        #     'id', 'product', 'weight', 'is_fragile', 'is_haz',
+        #     'id', 'product', 'weight', 'is_fragile', 'is_hazardous',
         #     'is_product_damaged', 'is_reefer', 'container',
         # )
 

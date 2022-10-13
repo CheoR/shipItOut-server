@@ -96,7 +96,7 @@ class Migration(migrations.Migration):
                 ('is_product_damaged', models.BooleanField(default=False)),
                 ('is_fragile', models.BooleanField(default=False)),
                 ('is_reefer', models.BooleanField(default=False)),
-                ('is_haz', models.BooleanField(default=False)),
+                ('is_hazardous', models.BooleanField(default=False)),
                 ('booking_notes', models.TextField(blank=True, default='')),
                 ('container', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='products', to='api.container')),
             ],
