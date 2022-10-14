@@ -64,9 +64,9 @@ class BookingViewSet(ViewSet):
 			delivery_address=request.data['delivery_address'],
 			delivery_appt=request.data['delivery_appt'],
 			booking_status=1, # Booking.PENDING
-			are_documents_ready=False,
-			are_dues_paid=False,
-			has_issue=False,
+			are_documents_ready=request.data['are_documents_ready'],
+			are_dues_paid=request.data['are_dues_paid'],
+			has_issue=request.data['has_issue'],
 			booking_notes=request.data['booking_notes'],
 			agent=agent,
 			carrier=carrier,
