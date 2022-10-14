@@ -53,7 +53,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('container', models.CharField(max_length=8)),
-                ('equipment_type', models.IntegerField(choices=[(0, ''), (1, '40OG'), (2, '20ST'), (3, '40ST'), (4, '20HC'), (5, '40HC')], default=0)),
+                ('container_type', models.IntegerField(choices=[(0, ''), (1, '40OG'), (2, '20ST'), (3, '40ST'), (4, '20HC'), (5, '40HC')], default=0)),
                 ('container_location', models.IntegerField(choices=[(6, 'YARD'), (7, 'RAIL'), (8, 'SAIL'), (9, 'PORT'), (10, 'BERTH'), (11, 'PICKUP'), (12, 'TRANSIT'), (13, 'STORAGE'), (14, 'DELIVERY'), (15, 'WAREHOUSE'), (16, 'INSPECTION')], default=6)),
                 ('is_needs_inspection', models.BooleanField(default=False)),
                 ('is_overweight', models.BooleanField(default=False)),

@@ -20,7 +20,7 @@ class ContainerProductSerializer(serializers.ModelSerializer):
 class ContainerRetrieveViewSerializer(serializers.ModelSerializer):
     booking = ProductBookingSerializer()
 
-    equipment_type_label = serializers.SerializerMethodField()
+    container_type_label = serializers.SerializerMethodField()
     container_location_label = serializers.SerializerMethodField()
     product_count = serializers.SerializerMethodField()
 
@@ -31,9 +31,9 @@ class ContainerRetrieveViewSerializer(serializers.ModelSerializer):
     def get_product_count(self, obj):
         return obj.product_count
 
-    def get_equipment_type_label(self, obj):
-        """Turn Enum choice equipment_type selection from number into human-readble string."""
-        return obj.get_equipment_type_display()
+    def get_container_type_label(self, obj):
+        """Turn Enum choice container_type selection from number into human-readble string."""
+        return obj.get_container_type_display()
 
     def get_container_location_label(self, obj):
         """Turn Enum choice container_location selection from number into human-readble string."""
@@ -52,7 +52,7 @@ class ContainerRetrieveViewSerializer(serializers.ModelSerializer):
 class ContainerListViewSerializer(serializers.ModelSerializer):
     booking = ProductBookingSerializer()
 
-    equipment_type = serializers.SerializerMethodField()
+    container_type = serializers.SerializerMethodField()
     container_location = serializers.SerializerMethodField()
     product_count = serializers.SerializerMethodField()
 
@@ -63,9 +63,9 @@ class ContainerListViewSerializer(serializers.ModelSerializer):
     def get_product_count(self, obj):
         return obj.product_count
 
-    def get_equipment_type(self, obj):
-        """Turn Enum choice equipment_type selection from number into human-readble string."""
-        return obj.get_equipment_type_display()
+    def get_container_type(self, obj):
+        """Turn Enum choice container_type selection from number into human-readble string."""
+        return obj.get_container_type_display()
 
     def get_container_location(self, obj):
         """Turn Enum choice container_location selection from number into human-readble string."""
@@ -91,7 +91,7 @@ class ContainerSerializer(serializers.ModelSerializer):
         model = Container
         fields = '__all__'
         # fields = (
-        #     'id', 'container', 'equipment_type', 'is_overweight',
+        #     'id', 'container', 'container_type', 'is_overweight',
         #     'container_location', 'is_container_damaged', 'is_needs_inspection',
         #     'is_in_use'
         # )
@@ -106,7 +106,7 @@ class PartialContainerSerializer(ContainerSerializer):
     """JSON serializer for Container with some fields excluded"""
 
     products = PartialProductSerializer(read_only=True, many=True)
-    equipment_type = serializers.SerializerMethodField()
+    container_type = serializers.SerializerMethodField()
     container_location = serializers.SerializerMethodField()
 
 
@@ -117,9 +117,9 @@ class PartialContainerSerializer(ContainerSerializer):
 
         depth = 1
 
-    def get_equipment_type(self, obj):
-        """Turn Enum choice equipment_type selection from number into human-readble string."""
-        return obj.get_equipment_type_display()
+    def get_container_type(self, obj):
+        """Turn Enum choice container_type selection from number into human-readble string."""
+        return obj.get_container_type_display()
 
     def get_container_location(self, obj):
         """Turn Enum choice container_location selection from number into human-readble string."""

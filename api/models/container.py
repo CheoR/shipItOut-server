@@ -52,7 +52,7 @@ class Container(models.Model):
     ]
 
     container = models.CharField(max_length=8)
-    equipment_type = models.IntegerField(
+    container_type = models.IntegerField(
         choices=EQUIPMENT_CHOICES,
         default=XX00,
     )

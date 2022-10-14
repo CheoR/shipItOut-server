@@ -34,7 +34,7 @@ class ContainerViewSet(ViewSet):
         print('*' * 10, "passed data", '*' * 10)
         container = Container.objects.create(
             container=request.data['container'],
-            equipment_type=request.data['equipment_type'],
+            container_type=request.data['container_type'],
             container_location=request.data['container_location'],
             is_container_damaged=request.data['is_container_damaged'],
             is_needs_inspection=request.data['is_needs_inspection'],
