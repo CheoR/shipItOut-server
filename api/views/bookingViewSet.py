@@ -146,7 +146,7 @@ class BookingViewSet(ViewSet):
 		booking.port_cutoff = request.data['port_cutoff']
 		booking.delivery_address = request.data['delivery_address']
 		booking.delivery_appt = request.data['delivery_appt']
-		# booking.booking_status = request.data['booking_status']
+		booking.booking_status = request.data['booking_status']
 		booking.are_documents_ready = request.data['are_documents_ready']
 		booking.are_dues_paid = request.data['are_dues_paid']
 		booking.booking_notes = request.data['booking_notes']
