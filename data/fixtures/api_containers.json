@@ -1,72 +1,72 @@
 [
-{
-  "model": "api.container",
-  "pk": 2,
-  "fields": {
-    "container": "KFJL3381",
-    "equipment_type": 1,
-    "equipment_location": 6,
-    "booking": 1,
-    "is_needs_inspection": false,
-    "is_overweight": false,
-    "is_damaged": false,
-    "is_in_use": true
+  {
+    "model": "api.container",
+    "pk": 2,
+    "fields": {
+      "container": "KFJL3381",
+      "equipment_type": 1,
+      "container_location": 6,
+      "booking": 1,
+      "is_needs_inspection": false,
+      "is_overweight": false,
+      "is_damaged": false,
+      "is_in_use": true
+    }
+  },
+  {
+    "model": "api.container",
+    "pk": 3,
+    "fields": {
+      "container": "TOTX0380",
+      "equipment_type": 2,
+      "container_location": 6,
+      "booking": 5,
+      "is_needs_inspection": false,
+      "is_overweight": false,
+      "is_damaged": false,
+      "is_in_use": true
+    }
+  },
+  {
+    "model": "api.container",
+    "pk": 4,
+    "fields": {
+      "container": "GNXI3314",
+      "equipment_type": 3,
+      "container_location": 6,
+      "booking": 6,
+      "is_needs_inspection": false,
+      "is_overweight": false,
+      "is_damaged": false,
+      "is_in_use": true
+    }
+  },
+  {
+    "model": "api.container",
+    "pk": 5,
+    "fields": {
+      "container": "BZAJ1118",
+      "equipment_type": 1,
+      "container_location": 6,
+      "booking": 7,
+      "is_needs_inspection": false,
+      "is_overweight": false,
+      "is_damaged": false,
+      "is_in_use": true
+    }
+  },
+  {
+    "model": "api.container",
+    "pk": 6,
+    "fields": {
+      "container": "WUSA2162",
+      "equipment_type": 3,
+      "container_location": 6,
+      "booking": 1,
+      "is_needs_inspection": false,
+      "is_overweight": false,
+      "is_damaged": false,
+      "is_in_use": true
+    }
   }
-},
-{
-  "model": "api.container",
-  "pk": 3,
-  "fields": {
-    "container": "TOTX0380",
-    "equipment_type": 2,
-    "equipment_location": 6,
-    "booking": 5,
-    "is_needs_inspection": false,
-    "is_overweight": false,
-    "is_damaged": false,
-    "is_in_use": true
-  }
-},
-{
-  "model": "api.container",
-  "pk": 4,
-  "fields": {
-    "container": "GNXI3314",
-    "equipment_type": 3,
-    "equipment_location": 6,
-    "booking": 6,
-    "is_needs_inspection": false,
-    "is_overweight": false,
-    "is_damaged": false,
-    "is_in_use": true
-  }
-},
-{
-  "model": "api.container",
-  "pk": 5,
-  "fields": {
-    "container": "BZAJ1118",
-    "equipment_type": 1,
-    "equipment_location": 6,
-    "booking": 7,
-    "is_needs_inspection": false,
-    "is_overweight": false,
-    "is_damaged": false,
-    "is_in_use": true
-  }
-},
-{
-  "model": "api.container",
-  "pk": 6,
-  "fields": {
-    "container": "WUSA2162",
-    "equipment_type": 3,
-    "equipment_location": 6,
-    "booking": 1,
-    "is_needs_inspection": false,
-    "is_overweight": false,
-    "is_damaged": false,
-    "is_in_use": true
-  }
-}
 ]
