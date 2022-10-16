@@ -25,7 +25,7 @@ class BookingSerializer(serializers.ModelSerializer):
 	product_count = serializers.SerializerMethodField()
 
 	# Mon Feb 14 2022 14:29:07 GMT-0600 (Central Standard Time)	
-#  "yyyy-MM-ddThh:mm" followed by optional ":ss" or ":ss.SSS".
+	#  "yyyy-MM-ddThh:mm" followed by optional ":ss" or ":ss.SSS".
 	# pickup_appt = serializers.DateTimeField(format="yyyy-MM-ddThh:mm:ss.SSS")
 
 	class Meta:

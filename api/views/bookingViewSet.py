@@ -94,7 +94,7 @@ class BookingViewSet(ViewSet):
 
 		try:
 			booking = Booking.objects.get(pk=pk)
-			serializer = BookingSerializer(
+			serializer = BookingDefaultSerializer(
 				booking,
 				context={'request': request},
 			)
