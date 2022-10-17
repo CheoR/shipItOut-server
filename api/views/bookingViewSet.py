@@ -94,10 +94,16 @@ class BookingViewSet(ViewSet):
 
 		try:
 			booking = Booking.objects.get(pk=pk)
-			serializer = BookingDefaultSerializer(
-				booking,
-				context={'request': request},
-			)
+			if (request.data.get('expanded_serializer')):
+				serializer = BookingSerializer(
+					booking,
+					context={'request': request},
+				)
+			else:
+				serializer = BookingDefaultSerializer(
+					booking,
+					context={'request': request},
+				)
 
 			return Response(serializer.data)
 		except Exception as ex:
