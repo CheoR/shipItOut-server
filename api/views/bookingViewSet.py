@@ -144,6 +144,7 @@ class BookingViewSet(ViewSet):
 		booking.pickup_appt = request.data['pickup_appt']
 		booking.rail_cutoff = request.data['rail_cutoff']
 		booking.port_cutoff = request.data['port_cutoff']
+		booking.has_issue = request.data['has_issue']
 		booking.delivery_address = request.data['delivery_address']
 		booking.delivery_appt = request.data['delivery_appt']
 		booking.booking_status = request.data['booking_status']

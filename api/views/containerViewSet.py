@@ -1,11 +1,13 @@
 """Container ViewSet"""
+import random
+import string
 
 from rest_framework import status
 from rest_framework.decorators import action
 from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 # from rest_framework.exceptions import ValidationError
-
+from django.db import models
 from django.http import HttpResponseServerError
 
 from api.models import Container, Booking
@@ -27,19 +29,21 @@ class ContainerViewSet(ViewSet):
             Returns:
                 Response : JSON serialized single Container types.
         """
-        
-        booking = Booking.objects.get(pk=request.data['booking'])
+        try:
+            booking = Booking.objects.get(pk=request.data['booking'])
+        except:
+            booking = None
         print('*' * 10, "passed data", '*' * 10)
         print(request.data)
         print('*' * 10, "passed data", '*' * 10)
         container = Container.objects.create(
-            container=request.data['container'],
-            container_type=request.data['container_type'],
-            container_location=request.data['container_location'],
-            is_container_damaged=request.data['is_container_damaged'],
-            is_needs_inspection=request.data['is_needs_inspection'],
-            is_overweight=request.data['is_overweight'],
-            is_in_use=True,
+            container=''.join(random.sample(string.ascii_uppercase, k=4)) + ''.join(random.sample(string.digits, k=4)),
+            container_type=request.data.get('container_type', 0),
+            container_location=request.data.get('container_location', 0),
+            is_container_damaged=request.data.get('is_container_damaged', False),
+            is_needs_inspection=request.data.get('is_needs_inspection', False),
+            is_overweight=request.data.get('is_overweight', False),
+            is_in_use=False,
             container_notes = models.TextField(default="", blank=True, ),
             booking=booking, # request.data['booking'],
         )
@@ -58,7 +62,8 @@ class ContainerViewSet(ViewSet):
         try:
             container = Container.objects.get(pk=pk)
             # container = Container.objects.get(pk__in=Booking.objects.filter(agent__user=request.auth.user))
-            serializer = ContainerRetrieveViewSerializer(
+            # serializer = ContainerRetrieveViewSerializer(
+            serializer = ContainerSerializer(
                 container,
                 context={'request': request},
             )
@@ -101,14 +106,18 @@ class ContainerViewSet(ViewSet):
             Response -- Empty body with 204 status code
         """
 
-        booking = Booking.objects.get(pk=request.data['booking'])
+        try:
+            booking = Booking.objects.get(pk=request.data['booking'])
+        except:
+            booking = None
         container = Container.objects.get(pk=pk)
 
-        container.container = request.data['container']
-        container.is_container_damaged = request.data['is_container_damaged']
-        container.is_needs_inspection = request.data['is_needs_inspection']
-        container.is_overweight = request.data['is_overweight']
-        container.container_notes = request.data['container_notes']
+        container.container_location = request.data.get('container_location', container.container_location)
+        container.is_in_use = request.data.get('is_in_use', container.is_in_use)
+        container.is_container_damaged = request.data.get('is_container_damaged', container.is_container_damaged)
+        container.is_needs_inspection = request.data.get('is_needs_inspection', container.is_needs_inspection)
+        container.is_overweight = request.data.get('is_overweight', container.is_overweight)
+        container.container_notes = request.data.get('container_notes', container.container_notes)
 
         container.booking = booking
 
