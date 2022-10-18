@@ -28,6 +28,15 @@ class Container(models.Model):
     WAREHOUSE = 15
     INSPECTION = 16
 
+    EQUIPMENT_CHOICES = [
+        ( XX00, '' ),
+        ( OG40, '40OG' ),
+        ( ST20, '20ST' ),
+        ( ST40, '40ST' ),
+        ( HC20, '20HC' ),
+        ( HC40, '40HC' ),
+    ]
+
     LOCATION_CHOICES = [
         ( YARD, 'YARD' ),
         ( RAIL, 'RAIL' ),
@@ -40,15 +49,6 @@ class Container(models.Model):
         ( DELIVERY, 'DELIVERY' ),
         ( WAREHOUSE, 'WAREHOUSE' ),
         ( INSPECTION, 'INSPECTION' ),
-    ]
-
-    EQUIPMENT_CHOICES = [
-        ( XX00, '' ),
-        ( OG40, '40OG' ),
-        ( ST20, '20ST' ),
-        ( ST40, '40ST' ),
-        ( HC20, '20HC' ),
-        ( HC40, '40HC' ),
     ]
 
     container = models.CharField(max_length=8)
