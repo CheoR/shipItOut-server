@@ -33,9 +33,7 @@ class ContainerViewSet(ViewSet):
             booking = Booking.objects.get(pk=request.data['booking'])
         except:
             booking = None
-        print('*' * 10, "passed data", '*' * 10)
-        print(request.data)
-        print('*' * 10, "passed data", '*' * 10)
+
         container = Container.objects.create(
             container=''.join(random.sample(string.ascii_uppercase, k=4)) + ''.join(random.sample(string.digits, k=4)),
             container_type=request.data.get('container_type', 0),
@@ -44,7 +42,7 @@ class ContainerViewSet(ViewSet):
             is_needs_inspection=request.data.get('is_needs_inspection', False),
             is_overweight=request.data.get('is_overweight', False),
             is_in_use=False,
-            container_notes = models.TextField(default="", blank=True, ),
+            container_notes=request.data.get('container_notes', ''),
             booking=booking, # request.data['booking'],
         )
 
