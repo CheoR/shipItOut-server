@@ -1,5 +1,8 @@
 """Voyage ViewSet"""
 
+import string
+import random
+
 from rest_framework import status
 # from rest_framework.exceptions import ValidationError
 from rest_framework.response import Response
@@ -28,11 +31,26 @@ class VoyageViewSet(ViewSet):
             Response -- JSON serialized Voyage instance
         """
 
-        vessel = Vessel.objects.get(pk=request.data['vessel'])
+        try:
+            vessel = Vessel.objects.get(pk=request.data['vessel'])
+        except:
+            vessel = None
+
+        # so service and starting endpoint match up
+        # e.g. all voyages starting at WC will be 1
+        ENDPOINT = ['WC','EC','NE','SE','GU']
+        start, end = random.sample([0, 1, 2, 3, 4], k=2)
+
+        if (request.data.get('manual', False)):
+            _voyage = request.data['voyage']
+            _service = request.data['service']
+        else:
+            _voyage = ''.join([ENDPOINT[start], ENDPOINT[end]]) + ''.join(random.sample(string.digits, k=4))
+            _service = request.data.get('service', start + 1)
 
         voyage = Voyage.objects.create(
-            voyage=request.data['voyage'],
-            service=request.data['service'],
+            voyage=_voyage,
+            service=_service,
             vessel=vessel,
         )
     
@@ -85,10 +103,11 @@ class VoyageViewSet(ViewSet):
         """
 
         voyage = Voyage.objects.get(pk=pk)
-        vessel = Vessel.objects.get(pk=request.data['vessel'])
-        
-        voyage.voyage = request.data['voyage']
-        voyage.service = request.data['service']
+        try:
+            vessel = Vessel.objects.get(pk=request.data['vessel'])
+        except:
+            vessel = None
+        voyage.service = request.data.get('service', voyage.service)
         voyage.vessel = vessel
 
         voyage.save()
