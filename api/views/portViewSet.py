@@ -82,8 +82,8 @@ class PortViewSet(ViewSet):
 
         port = Port.objects.get(pk=pk)
         
-        port.name = request.data['name']
-        port.code = request.data['code']
+        port.name = request.data.get('name', port.name)
+        port.code = request.data.get('code', port.code)
 
         port.save()
 
