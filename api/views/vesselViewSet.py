@@ -8,7 +8,7 @@ from rest_framework.exceptions import ValidationError
 from django.http import HttpResponseServerError
 
 from api.models import Vessel
-from api.serializers import VesselSerializer
+from api.serializers import DefaultVesselSerializer, VesselSerializer
 
 
 class VesselViewSet(ViewSet):
@@ -28,10 +28,11 @@ class VesselViewSet(ViewSet):
         """
 
         vessel = Vessel.objects.create(
+            # TODO: AUTO-GENERATE VESSEL NAMES WITH MOCKAROO API I MADE
             name=request.data['name'],
         )
 
-        serializer = VesselSerializer(vessel)
+        serializer = DefaultVesselSerializer(vessel)
 
         return Response(serializer.data, status=status.HTTP_201_CREATED)
 
@@ -43,7 +44,7 @@ class VesselViewSet(ViewSet):
         """
         try:
             vessel = Vessel.objects.get(pk=pk)
-            serializer = VesselSerializer(
+            serializer = DefaultVesselSerializer(
                 vessel,
                 context={'request': request},
             )
@@ -61,7 +62,7 @@ class VesselViewSet(ViewSet):
 
         try:
             vessels = Vessel.objects.all()
-            serialzied_vessels = VesselSerializer(
+            serialzied_vessels = DefaultVesselSerializer(
                 vessels,
                 many=True,
                 context={'request': request},

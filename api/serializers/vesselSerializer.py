@@ -10,6 +10,10 @@ class DefaultVesselSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Vessel
+        fields = '__all__'
+        # fields = (
+        #     'id', 'name',
+        # )
 
 
 class VesselSerializer(serializers.ModelSerializer):
@@ -18,16 +22,25 @@ class VesselSerializer(serializers.ModelSerializer):
     class Meta:
         model = Vessel
         fields = '__all__'
-        # fields = (
-        #     'id', 'name',
-        # )
-
         depth = 5
 
 
 class ParitalVesselSerializer(VesselSerializer):
-    """JSON serializer for Vessels with some fields excluded"""
+    """JSON serializer for Vessels with some fields excluded
+    {
+        "id": 10,
+        "service": "WC",
+        "voyage": "WCWC2283",
+        "vessel_name": "Struthio camelus"
+    }
+    {
+    "id": 10,
+    "service": "WC",
+    "voyage": "WCWC2283"
+    }
+    """
 
     class Meta:
         model = Vessel
+        # fields = '__all__'
         exclude = ('id', 'name', )
