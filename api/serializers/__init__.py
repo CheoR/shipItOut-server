@@ -1,7 +1,7 @@
 from .appuserSerializer import AppUserSerializer, PartialAppUserSerializer, AppUserCarrierSerializer
 from .portSerializer import PortSerializer, PartialPortSerializer
-from .vesselSerializer import VesselSerializer, ParitalVesselSerializer
-from .voyageSerializer import VoyageSerializer, PartialVoyageSerializer
+from .vesselSerializer import DefaultVesselSerializer, VesselSerializer, ParitalVesselSerializer
+from .voyageSerializer import DefaultVoyageSerializer, VoyageSerializer, PartialVoyageSerializer
 from .productSerializer import ProductSerializer, PartialProductSerializer, ProductListViewSerializer
 from .containerSerializer import ContainerSerializer, PartialContainerSerializer, ContainerListViewSerializer, ContainerRetrieveViewSerializer
 from .containerDefaultSerializer import ContainerDefaultSerializer

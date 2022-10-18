@@ -6,21 +6,42 @@ from api.models import Voyage
 from api.serializers import ParitalVesselSerializer
 
 
-class VoyageSerializer(serializers.ModelSerializer):
-    """JSON serializer for Voyages"""
+class DefaultVoyageSerializer(serializers.ModelSerializer):
+    """Default JSON serializer for Voyages
+        "id": 10,
+        "voyage": "WCWC2283",
+        "service": 1,
+        "vessel": 9
+    """
 
     class Meta:
         model = Voyage
         fields = '__all__'
-        # fields = (
-        #     'id', 'voyage', 'service', 'vessel',
-        # )
 
+
+class VoyageSerializer(serializers.ModelSerializer):
+    """Expanded JSON serializer for Voyages and nested vessel.
+        "id": 10,
+        "voyage": "WCWC2283",
+        "service": 1,
+        "vessel": {
+            "id": 9,
+            "name": "Struthio camelus"
+        }
+    """
+
+    class Meta:
+        model = Voyage
+        fields = '__all__'
         depth = 5
 
 
 class PartialVoyageSerializer(VoyageSerializer):
-    """JSON serializer for Voyages with some fields excluded"""
+    """Expand and stringify JSON serializer for Voyages
+        "id": 10,
+        "service": "WC",
+        "voyage": "WCWC2283"
+    """
     
     service = serializers.SerializerMethodField()
     vessel = ParitalVesselSerializer()

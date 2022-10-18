@@ -12,7 +12,7 @@ from rest_framework.decorators import action
 from django.http import HttpResponseServerError
 
 from api.models import Voyage, Vessel
-from api.serializers import VoyageSerializer, PartialVoyageSerializer
+from api.serializers import DefaultVoyageSerializer, VoyageSerializer, PartialVoyageSerializer
 
 
 class VoyageViewSet(ViewSet):
@@ -67,10 +67,16 @@ class VoyageViewSet(ViewSet):
 
         try:
             voyage = Voyage.objects.get(pk=pk)
-            serializer = VoyageSerializer(
-                voyage,
-                context={'request': request},
-            )
+            if(request.data.get('expand', False)):
+                serializer = VoyageSerializer(
+                    voyage,
+                    context={'request': request},
+                )
+            else:
+                serializer = DefaultVoyageSerializer(
+                    voyage,
+                    context={'request': request},
+                )
 
             return Response(serializer.data)
         except Exception as ex:
@@ -85,11 +91,19 @@ class VoyageViewSet(ViewSet):
 
         try:
             voyages = Voyage.objects.all()
-            serializer = VoyageSerializer(
-                voyages,
-                many=True,
-                context={'request': request},
-            )
+
+            if(request.data.get('expand', False)):
+                serializer = VoyageSerializer(
+                    voyages,
+                    many=True,
+                    context={'request': request},
+                )
+            else:
+                serializer = DefaultVoyageSerializer(
+                    voyages,
+                    many=True,
+                    context={'request': request},
+                )
 
             return Response(serializer.data)
         except Exception as ex:
@@ -103,6 +117,7 @@ class VoyageViewSet(ViewSet):
         """
 
         voyage = Voyage.objects.get(pk=pk)
+
         try:
             vessel = Vessel.objects.get(pk=request.data['vessel'])
         except:
