@@ -19,7 +19,7 @@ from api.models import (
 	Voyage,
 )
 
-from api.serializers import BookingDefaultSerializer, BookingSerializer
+from api.serializers import DefaultBookingSerializer, BookingSerializer
 
 
 class BookingViewSet(ViewSet):
@@ -39,11 +39,6 @@ class BookingViewSet(ViewSet):
 			Returns:
 				Response : JSON serialized list of Booking types.
 		"""
-		print()
-		print("=" * 10)
-		print(request.data)
-		print("=" * 10)
-		print()
 
 		agent = AppUser.objects.get(user=request.auth.user)
 		voyage = Voyage.objects.get(pk=request.data['voyage'])
@@ -76,7 +71,7 @@ class BookingViewSet(ViewSet):
 		)
 
 		try:
-			serializer = BookingSerializer(
+			serializer = DefaultBookingSerializer(
 				booking,
 				context={'request': request},
 			)
@@ -94,13 +89,13 @@ class BookingViewSet(ViewSet):
 
 		try:
 			booking = Booking.objects.get(pk=pk)
-			if (request.data.get('expanded_serializer')):
+			if (request.data.get('expand')):
 				serializer = BookingSerializer(
 					booking,
 					context={'request': request},
 				)
 			else:
-				serializer = BookingDefaultSerializer(
+				serializer = DefaultBookingSerializer(
 					booking,
 					context={'request': request},
 				)
@@ -138,25 +133,31 @@ class BookingViewSet(ViewSet):
 		"""
 
 		booking = Booking.objects.get(pk=pk)
-		agent = AppUser.objects.get(user=request.auth.user) # pk=request.data['agent'])
-		carrier = AppUser.objects.get(pk=request.data['carrier'])
-		voyage = Voyage.objects.get(pk=request.data['voyage'])
-		loading_port = Port.objects.get(pk=request.data['loading_port'])
-		unloading_port = Port.objects.get(pk=request.data['unloading_port'])
 
-		booking.unloading_destination_address = request.data['unloading_destination_address']
-		booking.loading_origin_address = request.data['loading_origin_address']
-		booking.pickup_address = request.data['pickup_address']
-		booking.pickup_appt = request.data['pickup_appt']
-		booking.rail_cutoff = request.data['rail_cutoff']
-		booking.port_cutoff = request.data['port_cutoff']
-		booking.has_issue = request.data['has_issue']
-		booking.delivery_address = request.data['delivery_address']
-		booking.delivery_appt = request.data['delivery_appt']
-		booking.booking_status = request.data['booking_status']
-		booking.are_documents_ready = request.data['are_documents_ready']
-		booking.are_dues_paid = request.data['are_dues_paid']
-		booking.booking_notes = request.data['booking_notes']
+		_carrier = request.data.get('carrier', booking.carrier.id)
+		_voyage = request.data.get('voyage', booking.voyage.id)
+		_loading_port = request.data.get('loading_port', booking.loading_port.id)
+		_unloading_port = request.data.get('unloading_port', booking.unloading_port.id)
+
+		agent = AppUser.objects.get(user=request.auth.user) # pk=request.data['agent'])
+		carrier = AppUser.objects.get(pk=_carrier)
+		voyage = Voyage.objects.get(pk=_voyage)
+		loading_port = Port.objects.get(pk=_loading_port)
+		unloading_port = Port.objects.get(pk=_unloading_port)
+
+		booking.unloading_destination_address = request.data.get('unloading_destination_address', booking.unloading_destination_address)
+		booking.loading_origin_address = request.data.get('loading_origin_address', booking.loading_origin_address)
+		booking.pickup_address = request.data.get('pickup_address', booking.pickup_address)
+		booking.pickup_appt = request.data.get('pickup_appt', booking.pickup_appt)
+		booking.rail_cutoff = request.data.get('rail_cutoff', booking.rail_cutoff)
+		booking.port_cutoff = request.data.get('port_cutoff', booking.port_cutoff)
+		booking.has_issue = request.data.get('has_issue', booking.has_issue)
+		booking.delivery_address = request.data.get('delivery_address', booking.delivery_address)
+		booking.delivery_appt = request.data.get('delivery_appt', booking.delivery_appt)
+		booking.booking_status = request.data.get('booking_status', booking.booking_status)
+		booking.are_documents_ready = request.data.get('are_documents_ready', booking.are_documents_ready)
+		booking.are_dues_paid = request.data.get('are_dues_paid', booking.are_dues_paid)
+		booking.booking_notes = request.data.get('booking_notes', booking.booking_notes)
 
 		booking.agent = agent
 		booking.carrier = carrier
@@ -198,7 +199,7 @@ class BookingViewSet(ViewSet):
 		try:
 			bookings = Booking.objects.filter(agent__user=request.auth.user)
 
-			serializer = BookingDefaultSerializer(
+			serializer = DefaultBookingSerializer(
 				bookings,
 				many=True,
 				context={'request': request},
