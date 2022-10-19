@@ -11,7 +11,7 @@ from django.db import models
 from django.http import HttpResponseServerError
 
 from api.models import Container, Booking
-from api.serializers import ContainerSerializer, ContainerListViewSerializer, ContainerDefaultSerializer, ContainerRetrieveViewSerializer
+from api.serializers import DefaultContainerSerializer, ContainerSerializer, PartialContainerSerializer, ContainerListViewSerializer, ContainerRetrieveViewSerializer
 
 
 class ContainerViewSet(ViewSet):
@@ -34,6 +34,7 @@ class ContainerViewSet(ViewSet):
         except:
             booking = None
 
+        # TODO: MAKE SURE SERAIZLIERS WORK FOR CONTAINERS AND NESTED DATA
         container = Container.objects.create(
             container=''.join(random.sample(string.ascii_uppercase, k=4)) + ''.join(random.sample(string.digits, k=4)),
             container_type=request.data.get('container_type', 0),
@@ -43,10 +44,10 @@ class ContainerViewSet(ViewSet):
             is_overweight=request.data.get('is_overweight', False),
             is_in_use=False,
             container_notes=request.data.get('container_notes', ''),
-            booking=booking, # request.data['booking'],
+            booking=booking,
         )
 
-        serializer = ContainerSerializer(container)
+        serializer = DefaultContainerSerializer(container)
 
         return Response(serializer.data, status=status.HTTP_201_CREATED)
 
@@ -59,13 +60,20 @@ class ContainerViewSet(ViewSet):
 
         try:
             container = Container.objects.get(pk=pk)
+            # TODO: ADD EXPAND HERE
             # container = Container.objects.get(pk__in=Booking.objects.filter(agent__user=request.auth.user))
             # serializer = ContainerRetrieveViewSerializer(
-            serializer = ContainerSerializer(
+            if (request.data.get('expand', False)):
+                serializer = ContainerSerializer(
+                    container,
+                    context={'request': request},
+                )
+            else:
+                serializer = DefaultContainerSerializer(
                 container,
                 context={'request': request},
             )
-        
+
             return Response(serializer.data)
         except Exception as ex:
             return HttpResponseServerError(ex)
@@ -75,6 +83,17 @@ class ContainerViewSet(ViewSet):
             Handle GET requests to get all container resources.
             Returns:
                 Response : JSON serialized list of Container types.
+            "id": 3,
+            "container_type": "20ST",
+            "container_location": 1,
+            "product_count": 0,
+            "container": "VWIK8214",
+            "is_needs_inspection": true,
+            "is_overweight": true,
+            "is_container_damaged": true,
+            "is_in_use": true,
+            "container_notes": "<django.db.models.fields.TextField>",
+            "booking": "S2JAUKL4ZQ"
         """
 
         try:
@@ -85,13 +104,18 @@ class ContainerViewSet(ViewSet):
                 )
             )
 
-            # serialzied_containers = PartialContainerSerializer(
-            # serialzied_containers = ContainerSerializer(
-            serialzied_containers = ContainerListViewSerializer(
-                containers,
-                many=True,
-                context={'request': request},
-            )
+            if(request.data.get('expand', False)):
+                serialzied_containers = PartialContainerSerializer(
+                    containers,
+                    many=True,
+                    context={'request': request},
+                )
+            else:
+                serialzied_containers = DefaultContainerSerializer(
+                    containers,
+                    many=True,
+                    context={'request': request},
+                )
 
             return Response(serialzied_containers.data)
         except Exception as ex:
