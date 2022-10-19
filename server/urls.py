@@ -24,12 +24,12 @@ from api.views import (
     register_user,
     login_user,
     AppUserViewSet,
+    BookingViewSet,
+    ContainerViewSet,
+    ProductViewSet,
     PortViewSet,
     VesselViewSet,
-    ContainerViewSet,
     VoyageViewSet,
-    ProductViewSet,
-    BookingViewSet,
 )
 
 # At any point, your urlpatterns can “include” other URLconf modules.

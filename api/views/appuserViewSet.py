@@ -10,7 +10,7 @@ from django.contrib.auth.models import User
 from django.http import HttpResponseServerError
 
 from api.models import AppUser
-from api.serializers import AppUserSerializer, AppUserCarrierSerializer
+from api.serializers import DefaultAppUserSerializer, AppUserSerializer, AppUserCarrierSerializer
 
 
 class AppUserViewSet(ViewSet):
@@ -30,10 +30,17 @@ class AppUserViewSet(ViewSet):
 
         try:
             user = AppUser.objects.get(pk=pk)
-            serializer = AppUserSerializer(
-                user,
-                context={'request': request},
-            )
+
+            if (request.data.get('expand', False)):
+                serializer = AppUserSerializer(
+                    user,
+                    context={'request': request},
+                )
+            else:
+                serializer = DefaultAppUserSerializer(
+                    user,
+                    context={'request': request},
+                )
 
             return Response(serializer.data)
         except Exception as ex:
@@ -48,13 +55,19 @@ class AppUserViewSet(ViewSet):
 
         try:
             users = AppUser.objects.all()
-            serialzied_appUsers = AppUserSerializer(
-                users,
-                many=True,
-                context={'request': request},
-            )
-
-            return Response(serialzied_appUsers.data)
+            if (request.data.get('expand', False)):
+                serialzier = AppUserSerializer(
+                    users,
+                    many=True,
+                    context={'request': request},
+                )
+            else:
+                serialzier = DefaultAppUserSerializer(
+                    users,
+                    many=True,
+                    context={'request': request},
+                )
+            return Response(serialzier.data)
         except Exception as ex:
             return HttpResponseServerError(ex)
 
@@ -65,18 +78,21 @@ class AppUserViewSet(ViewSet):
             Response -- Empty body with 204 status code
         """
 
-        user = AppUser.objects.get(pk=pk)
+        appuser = AppUser.objects.get(pk=pk)
+        user = User.objects.get(pk=appuser.id)
         
-        user.username = request.data["username"]
-        user.email = request.data["email"]
-        user.first_name = request.data["first_name"]
-        user.last_name = request.data["last_name"]
-        user.company = request.data["company"]
-        user.role = request.data["role"]
-        user.phone = request.data["phone"]
-        user.account_type = request.data["account_type"]
+        user.username = request.data.get("username", user.username)
+        user.email = request.data.get("email", user.email)
+        user.first_name = request.data.get("first_name", user.first_name)
+        user.last_name = request.data.get("last_name", user.last_name)
+
+        appuser.company = request.data.get("company", appuser.company)
+        appuser.role = request.data.get("role", appuser.role)
+        appuser.phone = request.data.get("phone", appuser.phone)
+        appuser.account_type = request.data.get("account_type", appuser.account_type)
 
         user.save()
+        appuser.save()
 
         return Response({}, status=status.HTTP_204_NO_CONTENT)
 

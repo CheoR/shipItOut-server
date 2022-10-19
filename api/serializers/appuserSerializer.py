@@ -5,14 +5,50 @@ from rest_framework import serializers
 from api.models import AppUser
 
 
-class AppUserSerializer(serializers.ModelSerializer):
-    """JSON serializer for AppUsers"""
+class DefaultAppUserSerializer(serializers.ModelSerializer):
+    """JSON serializer for AppUsers
+        "id": 1, # appuser.id
+        "company": "pug transport",
+        "role": "ops",
+        "phone": "615-123-4567",
+        "account_type": 3,
+        "user": 1 # user.id
+    """
     
     class Meta:
         model = AppUser
         fields = '__all__'
         # fields = ('id', 'user', 'token', 'username', 'email', 'first_name',
         #           'last_name', 'company', 'role', 'phone', 'account_type')
+
+
+class AppUserSerializer(serializers.ModelSerializer):
+    """JSON serializer for AppUsers
+            "id": 1,
+        "company": "pug transport",
+        "role": "ops",
+        "phone": "615-123-4567",
+        "account_type": 3,
+        "user": {
+            "id": 1,
+            "password": "pbkdf2_sha256$320000$G15hzDVSKvdszzqFzB8mNw$GFBEHIMCyWmettBq7Q9P29HcrrL3awRTc52eisBVT1A=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "peggypug",
+            "first_name": "peggy",
+            "last_name": "pug",
+            "email": "peggy@pug.com",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2022-10-14T02:11:55.019760Z",
+            "groups": [],
+            "user_permissions": []
+        }
+    """
+    
+    class Meta:
+        model = AppUser
+        fields = '__all__'
         depth = 5
 
 
