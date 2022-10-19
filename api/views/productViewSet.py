@@ -8,7 +8,7 @@ from rest_framework.viewsets import ViewSet
 from django.http import HttpResponseServerError
 
 from api.models import Product, Container, Booking
-from api.serializers import ProductSerializer, ProductListViewSerializer
+from api.serializers import DefaultProductSerializer, PartialProductSerializer, ProductListViewSerializer
 
 
 class ProductViewSet(ViewSet):
@@ -27,19 +27,23 @@ class ProductViewSet(ViewSet):
             Response -- JSON serialized Product instance
         """
 
-        container = Container.objects.get(pk=request.data['container'])
+        try:
+            container = Container.objects.get(pk=request.data['container'])
+        except:
+            container = None
+
         product = Product.objects.create(
             product=request.data['product'],
-            weight=request.data['weight'],
-            is_product_damaged=request.data['is_product_damaged'],
-            is_fragile=request.data['is_fragile'],
-            is_reefer=request.data['is_reefer'],
-            is_hazardous=request.data['is_hazardous'],
-            product_notes=request.data['product_notes'],
+            weight=request.data.get('weight', 0),
+            is_product_damaged=request.data.get('is_product_damaged', False),
+            is_fragile=request.data.get('is_fragile', False),
+            is_reefer=request.data.get('is_reefer', False),
+            is_hazardous=request.data.get('is_hazardous', False),
+            product_notes=request.data.get('product_notes', ''),
             container=container,
         )
 
-        serializer = ProductSerializer(product)
+        serializer = DefaultProductSerializer(product)
 
         return Response(serializer.data, status=status.HTTP_201_CREATED)
 
@@ -53,11 +57,16 @@ class ProductViewSet(ViewSet):
 
         try:
             product = Product.objects.get(pk=pk)
-            serializer = ProductListViewSerializer(
-            # serializer = ProductSerializer(
-                product,
-                context={'request': request},
-            )
+            if(request.data.get('expand', False)):
+                serializer =  PartialProductSerializer(
+                    product,
+                    context={'request': request},
+                )
+            else:
+                serializer =  DefaultProductSerializer(
+                    product,
+                    context={'request': request},
+                )
 
             return Response(serializer.data)
         except Exception as ex:
@@ -71,16 +80,17 @@ class ProductViewSet(ViewSet):
         """
 
         try:
-            # TODO: find better way to do this
-            products = Product.objects.filter(
-                container__in=Container.objects.filter(
-                    booking__in=Booking.objects.filter(
-                        agent__user=request.auth.user
+            if(request.data.get('just_user', False)):
+                products = Product.objects.all()
+            else:
+                products = Product.objects.filter(
+                    container__in=Container.objects.filter(
+                        booking__in=Booking.objects.filter(
+                            agent__user=request.auth.user
+                        )
                     )
                 )
-            )
             serialzier = ProductListViewSerializer(
-            # serialzier = ProductSerializer(
                 products,
                 many=True,
                 context={'request': request},
@@ -98,15 +108,19 @@ class ProductViewSet(ViewSet):
         """
 
         product = Product.objects.get(pk=pk)
-        container = Container.objects.get(pk=request.data['container'])
-        
-        product.product = request.data['product']
-        product.weight = request.data['weight']
-        product.is_product_damaged = request.data['is_product_damaged']
-        product.is_fragile = request.data['is_fragile']
-        product.is_reefer = request.data['is_reefer']
-        product.is_hazardous = request.data['is_hazardous']
-        product.product_notes = request.data['product_notes']
+
+        try:
+            container = Container.objects.get(pk=request.data['container'])
+        except:
+            container = None
+
+        product.product = request.data.get('product', product.product)
+        product.weight = request.data.get('weight', product.weight)
+        product.is_product_damaged = request.data.get('is_product_damaged', product.is_product_damaged)
+        product.is_fragile = request.data.get('is_fragile', product.is_fragile)
+        product.is_reefer = request.data.get('is_reefer', product.is_reefer)
+        product.is_hazardous = request.data.get('is_hazardous', product.is_hazardous)
+        product.product_notes = request.data.get('product_notes', product.product_notes)
         product.container = container
 
         product.save()
