@@ -73,9 +73,15 @@ class PartialAppUserSerializer(AppUserSerializer):
         """Turn Enum choice account_type selection from number into human-readble string."""
         return obj.get_account_type_display()
 
+
 class AppUserCarrierSerializer(serializers.ModelSerializer):
-    """JSON serializer for AppUsers"""
+    """JSON serializer for AppUsers Carriers
+    {
+        "id": 2,
+        "company": "carrier2 carrier"
+    }
+    """
     
     class Meta:
         model = AppUser
-        fields = ('id', 'company' )
+        fields = '__all__' # ('id', 'company' )
