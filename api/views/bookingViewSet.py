@@ -134,10 +134,10 @@ class BookingViewSet(ViewSet):
 
 		booking = Booking.objects.get(pk=pk)
 
-		_carrier = request.data.get('carrier', booking.carrier)
-		_voyage = request.data.get('voyage', booking.voyage)
-		_loading_port = request.data.get('loading_port', booking.loading_port)
-		_unloading_port = request.data.get('unloading_port', booking.unloading_port)
+		_carrier = request.data.get('carrier', booking.carrier.id)
+		_voyage = request.data.get('voyage', booking.voyage.id)
+		_loading_port = request.data.get('loading_port', booking.loading_port.id)
+		_unloading_port = request.data.get('unloading_port', booking.unloading_port.id)
 
 		agent = AppUser.objects.get(user=request.auth.user) # pk=request.data['agent'])
 		carrier = AppUser.objects.get(pk=_carrier)
