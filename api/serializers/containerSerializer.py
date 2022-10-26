@@ -207,3 +207,34 @@ class PartialContainerSerializer(ContainerSerializer):
     def get_container_location(self, obj):
         """Turn Enum choice container_location selection from number into human-readble string."""
         return obj.get_container_location_display()
+
+
+class ContainerTypesSerializer(serializers.ModelSerializer):
+    """Container Types
+    So frontend does not need a separate copy of possible container types.
+    """
+
+    container_type = serializers.SerializerMethodField()
+
+    def get_container_type(self, obj):
+        return [{"id": key, "container_type": value} for key, value in Container.EQUIPMENT_CHOICES]
+
+    class Meta:
+        model = Booking
+        fields = ('container_type', )
+
+
+class ContainerLocationsSerializer(serializers.ModelSerializer):
+    """Container Locations
+    So frontend does not need a separate copy of possible container locations.
+    """
+
+    container_location = serializers.SerializerMethodField()
+
+    def get_container_location(self, obj):
+        return [{"id": key, "container_location": value} for key, value in Container.LOCATION_CHOICES]
+
+
+    class Meta:
+        model = Booking
+        fields = ('container_location',)

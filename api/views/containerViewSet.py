@@ -11,7 +11,7 @@ from django.db import models
 from django.http import HttpResponseServerError
 
 from api.models import Container, Booking
-from api.serializers import DefaultContainerSerializer, ContainerSerializer, PartialContainerSerializer, ContainerListViewSerializer, ContainerRetrieveViewSerializer
+from api.serializers import DefaultContainerSerializer, ContainerSerializer, PartialContainerSerializer, ContainerListViewSerializer, ContainerRetrieveViewSerializer, ContainerTypesSerializer, ContainerLocationsSerializer
 
 
 class ContainerViewSet(ViewSet):
@@ -35,6 +35,7 @@ class ContainerViewSet(ViewSet):
             booking = None
 
         # TODO: MAKE SURE SERAIZLIERS WORK FOR CONTAINERS AND NESTED DATA
+        # TODO: limited container creation only to PORTOPS accounts
         container = Container.objects.create(
             container=''.join(random.sample(string.ascii_uppercase, k=4)) + ''.join(random.sample(string.digits, k=4)),
             container_type=request.data.get('container_type', 0),
@@ -134,6 +135,7 @@ class ContainerViewSet(ViewSet):
             booking = None
         container = Container.objects.get(pk=pk)
 
+        # TODO: limit some container properties to PORTOPS account
         container.container_location = request.data.get('container_location', container.container_location)
         container.is_in_use = request.data.get('is_in_use', container.is_in_use)
         container.is_container_damaged = request.data.get('is_container_damaged', container.is_container_damaged)
@@ -182,9 +184,51 @@ class ContainerViewSet(ViewSet):
                 )
             )
 
-            serializer = ContainerDefaultSerializer(
+            serializer = DefaultContainerSerializer(
                 containers,
                 many=True,
+                context={'request': request},
+            )
+
+            return Response(serializer.data)
+        except Exception as ex:
+            return HttpResponseServerError(ex)
+
+    @action(methods=['GET'], detail=False)
+    def container_types(self, request):
+        """
+            Handle GET requests to get available container types.
+            Returns:
+                Response : JSON serialized object list of container types .
+        """
+
+        try:
+            # TODO: merge this request with Container.LOCATION_CHOICES
+            types = Container.EQUIPMENT_CHOICES
+            serializer = ContainerTypesSerializer(
+                types,
+                many=False,
+                context={'request': request},
+            )
+
+            return Response(serializer.data)
+        except Exception as ex:
+            return HttpResponseServerError(ex)
+
+    @action(methods=['GET'], detail=False)
+    def container_locations(self, request):
+        """
+            Handle GET requests to get available container locations.
+            Returns:
+                Response : JSON serialized object list of container locations .
+        """
+
+        try:
+            # TODO: merge this request with Container.EQUIPMENT_CHOICES
+            locations = Container.LOCATION_CHOICES
+            serializer = ContainerLocationsSerializer(
+                locations,
+                many=False,
                 context={'request': request},
             )
 
