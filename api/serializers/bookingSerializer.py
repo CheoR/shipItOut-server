@@ -167,6 +167,3 @@ class BookingStatusesSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = Booking
 		fields = ('booking_status',)
-
-
-

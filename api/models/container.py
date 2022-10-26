@@ -29,7 +29,7 @@ class Container(models.Model):
     INSPECTION = 16
 
     EQUIPMENT_CHOICES = [
-        ( XX00, '' ),
+        ( XX00, 'XXXX' ),
         ( OG40, '40OG' ),
         ( ST20, '20ST' ),
         ( ST40, '40ST' ),

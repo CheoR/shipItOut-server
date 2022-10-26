@@ -177,12 +177,13 @@ class ContainerViewSet(ViewSet):
         """
 
         try:
-            # TODO: find better way to do this
-            containers = Container.objects.filter(
-                booking__in=Booking.objects.filter(
-                    agent__user=request.auth.user
-                )
-            )
+            # TODO: find better way to do this for containers that belong to user
+            # containers = Container.objects.filter(
+            #     booking__in=Booking.objects.filter(
+            #         agent__user=request.auth.user
+            #     )
+            # )
+            containers = Container.objects.filter(is_in_use=False)
 
             serializer = DefaultContainerSerializer(
                 containers,
