@@ -25,11 +25,10 @@ class Booking(models.Model):
     PENDING = 1
     COMPLETE = 2
     CLOSED = 3
-    ERROR = 4
     
     BOOKING_STATUS_CHOICES = [
         ( ERROR, 'ERROR' ),
-        ( XX, '' ),
+        ( XX, 'XX' ),
         ( PENDING, 'PENDING' ),
         ( COMPLETE, 'COMPLETE' ),
         ( CLOSED, 'CLOSED' ),

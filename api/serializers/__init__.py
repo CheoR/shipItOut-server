@@ -4,4 +4,4 @@ from .vesselSerializer import DefaultVesselSerializer, VesselSerializer, Parital
 from .voyageSerializer import DefaultVoyageSerializer, VoyageSerializer, PartialVoyageSerializer
 from .productSerializer import DefaultProductSerializer, PartialProductSerializer, ProductListViewSerializer
 from .containerSerializer import DefaultContainerSerializer, ContainerSerializer, PartialContainerSerializer, ContainerListViewSerializer, ContainerRetrieveViewSerializer
-from .bookingSerializer import DefaultBookingSerializer, BookingSerializer
+from .bookingSerializer import DefaultBookingSerializer, BookingSerializer, BookingStatusesSerializer

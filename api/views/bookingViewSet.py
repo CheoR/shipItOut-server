@@ -19,7 +19,7 @@ from api.models import (
 	Voyage,
 )
 
-from api.serializers import DefaultBookingSerializer, BookingSerializer
+from api.serializers import DefaultBookingSerializer, BookingSerializer, BookingStatusesSerializer
 
 
 class BookingViewSet(ViewSet):
@@ -202,6 +202,26 @@ class BookingViewSet(ViewSet):
 			serializer = DefaultBookingSerializer(
 				bookings,
 				many=True,
+				context={'request': request},
+			)
+
+			return Response(serializer.data)
+		except Exception as ex:
+			return HttpResponseServerError(ex)
+
+	@action(methods=['GET'], detail=False)
+	def booking_statuses(self, request):
+		"""
+			Handle GET requests to get available bookings statuses.
+			Returns:
+				Response : JSON serialized list of booking statuses .
+		"""
+
+		try:
+			statuses = Booking.BOOKING_STATUS_CHOICES
+			serializer = BookingStatusesSerializer(
+				statuses,
+				many=False,
 				context={'request': request},
 			)
 

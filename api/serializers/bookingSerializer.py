@@ -152,3 +152,21 @@ class BookingSerializer(serializers.ModelSerializer):
 				continue
 			representation['agent_' + key] = cs_representation[key]
 		return representation
+
+
+class BookingStatusesSerializer(serializers.ModelSerializer):
+	"""Booking Statuses
+	So frontend does not need a separate copy of possible statuses.
+	"""
+
+	booking_status = serializers.SerializerMethodField()
+
+	def get_booking_status(self, obj):
+		return [{"id": key, "booking_status": value} for key, value in Booking.BOOKING_STATUS_CHOICES]
+
+	class Meta:
+		model = Booking
+		fields = ('booking_status',)
+
+
+
