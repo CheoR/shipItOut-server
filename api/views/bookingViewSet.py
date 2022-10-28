@@ -95,7 +95,7 @@ class BookingViewSet(ViewSet):
 					context={'request': request},
 				)
 			else:
-				serializer = BookingSerializer(
+				serializer = DefaultBookingSerializer(
 					booking,
 					context={'request': request},
 				)
