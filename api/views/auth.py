@@ -6,6 +6,7 @@ from django.contrib.auth.models import User
 from django.views.decorators.csrf import csrf_exempt
 
 from rest_framework import status
+from rest_framework.response import Response
 from rest_framework.authtoken.models import Token
 
 from api.models import AppUser
@@ -55,26 +56,33 @@ def register_user(request):
         return HttpResponse(data, content_type='application/json', status=status.HTTP_400_BAD_REQUEST)
 
     # Create a new user with Django's built-in User.create_user method
-    new_user = User.objects.create_user(
-        username=req_body['username'],
-        email=req_body['email'],
-        password=req_body['password'],
-        first_name=req_body['first_name'],
-        last_name=req_body['last_name'],
-    )
+    try:
+        print("\n\ntrying to crate new User")
+        new_user = User.objects.create_user(
+            username=req_body['username'],
+            email=req_body['email'],
+            password=req_body['password'],
+            first_name=req_body['first_name'],
+            last_name=req_body['last_name'],
+        )
+    except Exception as ex:
+        return Response({'message': "Could Not Create User"}, content_type='application/json', status=status.HTTP_406_NOT_ACCEPTABLE)
 
     # If you extend the User model to include extra fields, this is
     # where you would add the extra fields. E.g AppUser extends User
     # Note that User uses create_user method while AppUser uses create
     # method.
     # Also note how AppUser is linked 1-to-1 with User object.
-    appuser = AppUser.objects.create(
-        company=req_body['company'],
-        role=req_body['role'],
-        phone=req_body['phone'],
-        account_type=req_body['account_type'],
-        user=new_user,
-    )
+    try:
+        appuser = AppUser.objects.create(
+            company=req_body['company'],
+            role=req_body['role'],
+            phone=req_body['phone'],
+            account_type=req_body['account_type'],
+            user=new_user,
+        )
+    except Exception as ex:
+        return Response({'message': ex.args[0]}, content_type='application/json', status=status.HTTP_406_NOT_ACCEPTABLE)
 
     # This is redundanta has the create method above also saves.
     # appuser.save()
